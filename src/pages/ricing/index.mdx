@@ -1,0 +1,71 @@
+---
+layout: "@layouts/MdxPage.astro"
+title: "Juni Kim"
+---
+
+# Ricing
+
+I was introduced to the world of ricing by my fellow nerds in the Open Source
+Cult. Ever since, I have experimented with a variety of different setups and
+programs to optimize both productivity and aesthetics.
+
+## Software
+
+Below are some of the main pieces of software I use, although I often adventure
+beyond them!
+
+| Type            | Choice (Linux)      | Choice (MacOS)      |
+| --------------- | ------------------- | ------------------- |
+| Terminal        | Alacritty with Tmux | Alacritty with Tmux |
+| Shell           | Zsh with oh-my-zsh  | Zsh with oh-my-zsh  |
+| Editor          | Neovim              | Neovim/VSCode       |
+| Window Manager  | Too many            | Yabai               |
+| Document Viewer | Zathura             | Skim                |
+| Music           | Mpd with Ncmpcpp    | Mpd with Ncmpcpp    |
+
+## Editor Configuration
+
+My primary workhorse is a custom neovim setup with LSP, Telescope, and all the
+other goodies baked in. I like the catppuccin color scheme, so that's used. You
+can find it [here](https://git.junickim.me/junikimm717/nvim2023).
+
+I've also written some vimrc's with features that one would expect from a modern
+editor [here](https://git.junickim.me/junikimm717/vim2023). Just `curl -LJ` one
+of these vimrc's into `~/.vimrc` and when you open `vim`, setup will occur
+automatically with no further intervention.
+
+## Window Manager Configuration
+
+Whatever desktop I'm on, I always associate each workspace with a certain
+type of application. I configure my window manager and status bars accordingly.
+
+1. The terminal emulator. I used to have multiple emulator instances open across
+   multiple workspaces, but tmux has made this far less efficient.
+2. The web browser
+3. Other code editors/productivity tools
+4. Chatting/conference software
+5. Virtual Machine software; yes, I am a proud VM spammer
+6. Music players; apps like YouTube Music or Cantata go here, although I don't
+   use them as much because ncmpcpp exists. 6 is correspondingly the most
+   annoying digit to reach.
+7. Settings
+8. Discord
+9. Streaming/recording software
+
+## Schoolwork Management
+
+Because I possess multiple computers and do virtually all of my schoolwork in
+plain-text files, I have hacked together a custom synchronization and backup
+system.
+
+The main storage system involves three servers following the 3-2-1 backup rule.
+In my house is a Raspberry Pi (which I won from a programming competition) and a
+14-year-old Dell workstation that I revived with FreeBSD. Off-premises, I
+have a VPS instance from DigitalOcean. All three of these servers sync my
+schoolwork with each other through `syncthing` and create backups every 6 hours
+with `tar` and `cron`.
+
+I can freely edit all my schoolwork on the Raspberry Pi by mounting it on
+whatever computer I have through either an nfs or samba mount. The work on the
+DigitalOcean droplet can be accessed through samba, although it is password
+protected.

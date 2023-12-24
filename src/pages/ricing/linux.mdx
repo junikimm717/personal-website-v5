@@ -1,0 +1,55 @@
+---
+layout: "@layouts/MdxPage.astro"
+title: "Linux Rices"
+---
+
+import { Image } from "astro:assets";
+
+# Linux Rices
+
+import Nixos from "./lempnixos.jpeg";
+import Arch from "./lemparch.jpeg";
+
+<figure>
+  <Image src={Nixos} width={3000} alt="Nixos rice" />
+  <Image src={Arch} width={3000} alt="Nixos rice" />
+  <figcaption class="text-center">
+    NixOS and Arch Rices (respectively) for my System76 Lemur Pro with BSPWM,
+    Polybar, and EWW. Dotfiles for the former on
+    [GitHub](https://github.com/junikimm717/nixosdots).
+  </figcaption>
+</figure>
+
+import Popberry from "./popberry.png";
+
+<figure>
+  <Image src={Popberry} width={3000} alt="Popberry" />
+  <figcaption class="text-center">
+    Debian Rice on a VM with Polybar, Conky, and Berry WM. Dotfiles on [my git
+    server](https://git.junickim.me/junirices/popberry).
+  </figcaption>
+</figure>
+
+import Debiancwm from "./debiancwm.png";
+
+<figure>
+  <Image src={Debiancwm} width={3000} alt="Debian CWM" />
+  <figcaption class="text-center">
+    Debian Rice on a VM with Calm WM, Picom, and Polybar.
+  </figcaption>
+</figure>
+
+import i32021 from "./2021_i3rice.png";
+
+<figure>
+  <Image src={i32021} width={3000} alt="Debian CWM" />
+  <figcaption class="text-center">
+    An i3 Rice on the Lemur Pro from 2021. Dotfiles on
+    [GitHub](https://github.com/junikimm717/Dotfiles-i3-rice).
+  </figcaption>
+</figure>
+
+## Related Programs
+
+- [My Dwm Build](https://github.com/junikimm717/dwm)
+- Depends on Distro: [Bootstrapping Scripts](https://git.junickim.me/junikimm717/server2023)
