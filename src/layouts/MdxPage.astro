@@ -2,15 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 
 interface Props {
-	title: string
+  content: any;
 }
+const { content } = Astro.props;
 ---
 
-<Layout title={Astro.props.title}>
+<Layout {content}>
   <div class="prose dark:prose-invert prose-h1:font-extrabold prose-h2:font-bold
   prose-a:underline hover:prose-a:font-semibold prose-figcaption:text-center
-  prose-a:transition-all prose-a:text-blue-800
-  prose-a:dark:text-blue-300">
+  prose-a:transition-all prose-a:text-main prose-sm twocol:prose-base
+  prose-a:dark:text-main-dark prose-headings:font-sans">
     <slot />
   </div>
 </Layout>

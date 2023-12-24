@@ -5,17 +5,17 @@ import DarkMode from './DarkMode'
 import {FaBowlRice, FaBroom} from 'react-icons/fa6'
 ---
 
-<div class="mx-auto max-w-[900px] sm:grid sm:grid-cols-12 gap-3 p-3">
-  <div class="mx-1 my-3 p-3 column sm:col-span-3">
+<div class="mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12 gap-3 p-3">
+  <div class="mx-1 my-3 p-3 column twocol:col-span-3 font-sans">
     <Navbar client:load>
-      <div class="text-lg text-blue-800 dark:text-blue-300">
-        <h2><a href="/">About</a></h2>
-        <h2><a href="/projects">Projects</a></h2>
+      <div class="text-lg text-main dark:text-main-dark">
+        <div class="nav-item"><a href="/">About</a></div>
+        <div class="nav-item"><a href="/projects">Projects</a></div>
         <a href="/ricing">
-          <h2 class="flex flex-row flex-wrap items-center gap-1">
+          <div class="flex flex-row flex-wrap items-center gap-1 nav-item">
             <span>Ricing</span>
             <FaBowlRice class="inline" />
-          </h2>
+          </div>
         </a>
         <ul>
           <li>
@@ -26,33 +26,34 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
           </li>
         </ul>
         <a href="/mop">
-          <h2 class="flex flex-row flex-wrap items-center gap-1">
+          <div class="flex flex-row flex-wrap items-center gap-1 nav-item">
             <span>MOP</span>
             <FaBroom class="inline" />
-          </h2>
+          </div>
         </a>
-        <h2><a href="/resume.pdf">Resume</a></h2>
+        <div class="nav-item"><a href="/resume.pdf">Resume</a></div>
       </div>
       <DarkMode client:idle />
     </Navbar>
   </div>
-  <div class="mx-1 my-3 p-3 column sm:col-span-9">
+  <div class="mx-1 my-3 p-3 column twocol:col-span-9">
     <slot/>
   </div>
 </div>
 
 <style scoped>
   ul {
-    @apply text-blue-800 dark:text-blue-300 list-disc list-inside text-base
+    @apply text-main dark:text-main-dark list-disc list-inside text-base
   }
-  h2 {
-    @apply text-blue-800 dark:text-blue-300 text-lg
+  div.nav-item {
+    @apply text-main dark:text-main-dark text-lg
   }
   a {
-    @apply duration-200 underline decoration-blue-800 dark:decoration-blue-300 hover:font-semibold
+    @apply duration-200 underline decoration-main dark:decoration-main-dark hover:font-semibold
   }
   .column {
-    @apply shadow-md hover:shadow-lg hover:-translate-y-[1px] dark:shadow-gray-600 shadow-gray-400 border
+    @apply shadow-md hover:shadow-lg hover:-translate-y-[1px]
+    dark:hover:dark:shadow-gray-600 dark:shadow-gray-600 shadow-gray-400 hover:shadow-gray-400 border
     dark:border-gray-600 border-gray-400
     duration-200
   }
