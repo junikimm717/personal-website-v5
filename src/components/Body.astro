@@ -6,7 +6,7 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
 ---
 
 <div class="mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12 gap-3 p-3">
-  <div class="mx-1 my-3 p-3 column twocol:col-span-3 font-sans">
+  <div class="my-3 twocol:col-span-3 font-sans">
     <Navbar client:load>
       <div class="text-lg text-main dark:text-main-dark">
         <div class="nav-item"><a href="/">About</a></div>
@@ -58,11 +58,5 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
   }
   a {
     @apply duration-200 underline decoration-main dark:decoration-main-dark hover:font-semibold
-  }
-  .column {
-    @apply shadow-md hover:shadow-lg hover:-translate-y-[1px]
-    dark:hover:dark:shadow-gray-600 dark:shadow-gray-600 shadow-gray-400 hover:shadow-gray-400 border
-    dark:border-gray-600 border-gray-400
-    duration-200
   }
 </style>
