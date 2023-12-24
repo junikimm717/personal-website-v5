@@ -1,0 +1,32 @@
+---
+layout: "@layouts/MdxPage.astro"
+title: "Workflow"
+---
+
+# Development Setup
+
+## Terminal
+
+I am a very big fan of tmux and oh-my-zsh, which allow me to navigate around my
+computer with minimal fuss. For tmux, I have [a hacked script](/code/tmuxs.sh)
+included in my `$PATH` which allows me to fuzzy find the project directory of my
+choice. The following two lines configure the directories to be searched
+(separated by colons) and set up a custom keybinding for me to activate the
+script:
+
+```bash
+export WORKSPACES=$HOME/Documents:$HOME/docs/programming:$WORKSPACES
+bindkey -s "^f" "tmuxs -d 4\n"
+```
+
+## Editor Configuration
+
+I use a custom neovim setup with LSP, Telescope, and all the
+other goodies baked in. I like the catppuccin color scheme, so that's used. You
+can find it [on my git server](https://git.junickim.me/junikimm717/nvim2023).
+
+I've also written a set of vimrc's with features that one would expect from a
+modern editor, available [on my git
+server](https://git.junickim.me/junikimm717/vim2023). Just `curl -LJ` a vimrc
+into `~/.vimrc` and when you open `vim`, setup will occur automatically with no
+further intervention.

@@ -10,6 +10,7 @@ export default {
       colors: {
         'main': '#750014',
         'main-dark': '#00ad00',
+        'darkbg': '#212326'
       },
     },
     fontFamily: {

@@ -1,0 +1,41 @@
+---
+layout: "@layouts/MdxPage.astro"
+title: "School"
+---
+
+# School Setup
+
+## Plain Text
+
+In my freshman year, after suffering through much impostor syndrome, I finally
+discovered the power of markup languages with the help of the Open Source cult.
+
+These days, I use markdown for notes and essays and LaTeX for anything more
+complicated. For LaTeX work, I use [a class](/code/juni.cls) that I hacked
+together. To build and generate projects for each assignment, I use
+[TeXbld](/dev/#texbld).
+
+## Servers
+
+Due to the peculiarities of my workflow, I have hacked together a custom
+synchronization and backup system.
+
+The main storage system involves three servers following the 3-2-1 backup rule.
+In my house is a Raspberry Pi (which I won from a programming competition) and a
+14-year-old Dell workstation that I revived with FreeBSD. Outside my house, I
+have a VPS instance from DigitalOcean. All three servers sync my schoolwork with
+each other through `syncthing` and create backups every 6 hours with `cron` and
+a script that looks something like below:
+
+```sh
+#!/bin/sh
+cd /srv/nfs
+ls | sort -n | head -n 30 | xargs -r rm -rf
+mkdir -p /srv/nfs/backups/archives
+tar -czvf /srv/nfs/backups/archives/$(date +%s).tar.gz ohsg12
+```
+
+I can freely edit all my schoolwork on the Raspberry Pi by mounting it on
+whatever computer I happen to have through either an nfs or samba mount. The
+DigitalOcean droplet can be accessed through samba, although it is password
+protected.

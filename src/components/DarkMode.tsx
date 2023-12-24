@@ -22,7 +22,7 @@ export default function DarkMode() {
   return (
     <div className="w-full flex justify-center">
       <button
-        className="duration-200 text-xl border border-gray-400 dark:border-gray-600 hover:bg-[#121212] hover:text-white dark:hover:bg-white dark:hover:text-black p-2 mx-auto mt-2"
+        className="duration-200 text-xl border border-gray-400 dark:border-gray-600 hover:bg-darkbg hover:text-white dark:hover:bg-white dark:hover:text-black p-2 mx-auto mt-2"
         aria-label="Toggle Dark Mode"
         onClick={() => setDark(!dark)}
       >

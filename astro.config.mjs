@@ -12,4 +12,12 @@ export default defineConfig({
       noExternal: ["react-icons"],
     },
   },
+  markdown: {
+    shikiConfig: {
+      experimentalThemes: {
+        light: 'light-plus',
+        dark: 'one-dark-pro',
+      },
+    },
+  },
 });

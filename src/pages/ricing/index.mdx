@@ -16,24 +16,11 @@ Below are some pieces of software I use, although I often adventure beyond them!
 
 | Type            | Choice (Linux)      | Choice (MacOS)      |
 | --------------- | ------------------- | ------------------- |
-| Terminal        | Alacritty with Tmux | Alacritty with Tmux |
-| Shell           | Zsh with oh-my-zsh  | Zsh with oh-my-zsh  |
+| Terminal        | Alacritty           | Alacritty           |
 | Editor          | Neovim              | Neovim/VSCode       |
 | Window Manager  | Too many            | Yabai               |
 | Document Viewer | Zathura             | Skim                |
 | Music           | Mpd with Ncmpcpp    | Mpd with Ncmpcpp    |
-
-## Editor Configuration
-
-My primary workhorse is a custom neovim setup with LSP, Telescope, and all the
-other goodies baked in. I like the catppuccin color scheme, so that's used. You
-can find it [on my git server](https://git.junickim.me/junikimm717/nvim2023).
-
-I've also written a set of vimrc's with features that one would expect from a
-modern editor, available [on my git
-server](https://git.junickim.me/junikimm717/vim2023). Just `curl -LJ` a vimrc
-into `~/.vimrc` and when you open `vim`, setup will occur automatically with no
-further intervention.
 
 ## Window Manager Configuration
 
@@ -52,21 +39,3 @@ type of application. I configure my window manager and status bars accordingly.
 7. Settings
 8. Discord
 9. Streaming/recording software
-
-## Schoolwork Management
-
-Because I possess multiple computers and do virtually all of my schoolwork on
-plain-text files, I have hacked together a custom synchronization and backup
-system.
-
-The main storage system involves three servers following the 3-2-1 backup rule.
-In my house is a Raspberry Pi (which I won from a programming competition) and a
-14-year-old Dell workstation that I revived with FreeBSD. Outside my house, I
-have a VPS instance from DigitalOcean. All three servers sync my schoolwork with
-each other through `syncthing` and create backups every 6 hours with `tar` and
-`cron`.
-
-I can freely edit all my schoolwork on the Raspberry Pi by mounting it on
-whatever computer I happen to have through either an nfs or samba mount. The
-DigitalOcean droplet can be accessed through samba, although it is password
-protected.
