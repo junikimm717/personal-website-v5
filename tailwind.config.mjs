@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         'main': '#750014',
-        'main-dark': '#00ad00',
+        'main-dark': '#ff1423',
         'darkbg': '#212326'
       },
     },
