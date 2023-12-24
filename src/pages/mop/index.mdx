@@ -3,6 +3,8 @@ layout: "@layouts/MdxPage.astro"
 title: "MOP"
 ---
 
+import {Image} from 'astro:assets';
+
 # MOP
 
 In 2023, I attended the [Mathematical Olympiad Program
@@ -12,6 +14,13 @@ the most transformative experiences of my life, and I've remained connected to
 the community there ever since.
 
 ## PureMOOt
+
+import Puremoot from "./puremootation.png";
+
+<div class="flex justify-center items-center gap-3 m-0 p-0">
+<div class="m-0 p-0">
+<Image src={Puremoot} width={400} alt="puremootation" />
+</div></div>
 
 I wrote a Discord bot for our server (Lemonade Shop) that issues random pairs of
 people every day; pairs are encouraged to converse in DM's and get to know each

@@ -3,9 +3,11 @@ layout: "@layouts/MdxPage.astro"
 title: "Projects"
 ---
 
+import { Image } from "astro:assets";
+
 # Projects
 
-Below are some of the notable things that I've built. Almost all of my work is
+Below are some notable things that I've built. Almost all of my work is
 publicly available either on [GitHub](https://github.com/junikimm717) or my
 [personal git server](https://git.junickim.me).
 
@@ -13,6 +15,10 @@ I try to work on projects which I think are somewhat novel and/or reasonably
 useful to me and others.
 
 ## Search.MAATester.com
+
+import Search from "./search.png";
+
+<Image src={Search} width={700} alt="Search.MAATester.com" />
 
 A search-as-you-type search engine with 20,000 math olympiad problems from
 various sources. React/TypeScript frontend, Go+Meilisearch backend, deployed on
@@ -22,6 +28,10 @@ a VPS with Docker.
 [GitHub](https://github.com/MAA-Contest-Tester/search)
 
 ## MAATester.com
+
+import Tester from "./maatester.png";
+
+<Image src={Tester} width={700} alt="MAATester.com" />
 
 A website designed to facilitate preparation for the short-answer math contests
 administered by the Mathematical Association of America. Levels and automatic
