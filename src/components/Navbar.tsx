@@ -7,7 +7,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
   return small ? (
     <div>
       <div className="flex flex-row justify-between">
-        <h1 className="text-2xl font-extrabold">JuniCKim.me</h1>
+        <h1 className="text-xl font-extrabold">junickim.me</h1>
         <button
           className="text-xl border border-gray-300 dark:border-gray-600 rounded-lg px-3"
           onClick={() => setOpen(!open)}
@@ -19,7 +19,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
     </div>
   ) : (
     <div>
-      <h1 className="text-2xl font-extrabold">JuniCKim.me</h1>
+      <h1 className="text-xl font-extrabold">junickim.me</h1>
       <div className="hidden sm:block">{props.children}</div>
     </div>
   );

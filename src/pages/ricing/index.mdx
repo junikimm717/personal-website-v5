@@ -7,12 +7,12 @@ title: "Juni Kim"
 
 I was introduced to the world of ricing by my fellow nerds in the Open Source
 Cult. Ever since, I have experimented with a variety of different setups and
-programs to optimize both productivity and aesthetics.
+programs to optimize both productivity and aesthetics. I've riced on both
+[MacOS](ricing/macos) and a bunch of [Linux Distros](ricing/linux).
 
 ## Software
 
-Below are some of the main pieces of software I use, although I often adventure
-beyond them!
+Below are some pieces of software I use, although I often adventure beyond them!
 
 | Type            | Choice (Linux)      | Choice (MacOS)      |
 | --------------- | ------------------- | ------------------- |
@@ -54,18 +54,18 @@ type of application. I configure my window manager and status bars accordingly.
 
 ## Schoolwork Management
 
-Because I possess multiple computers and do virtually all of my schoolwork in
+Because I possess multiple computers and do virtually all of my schoolwork on
 plain-text files, I have hacked together a custom synchronization and backup
 system.
 
 The main storage system involves three servers following the 3-2-1 backup rule.
 In my house is a Raspberry Pi (which I won from a programming competition) and a
-14-year-old Dell workstation that I revived with FreeBSD. Off-premises, I
-have a VPS instance from DigitalOcean. All three of these servers sync my
-schoolwork with each other through `syncthing` and create backups every 6 hours
-with `tar` and `cron`.
+14-year-old Dell workstation that I revived with FreeBSD. Outside my house, I
+have a VPS instance from DigitalOcean. All three servers sync my schoolwork with
+each other through `syncthing` and create backups every 6 hours with `tar` and
+`cron`.
 
 I can freely edit all my schoolwork on the Raspberry Pi by mounting it on
-whatever computer I have through either an nfs or samba mount. The work on the
+whatever computer I happen to have through either an nfs or samba mount. The
 DigitalOcean droplet can be accessed through samba, although it is password
 protected.

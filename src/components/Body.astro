@@ -6,33 +6,37 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
 ---
 
 <div class="mx-auto max-w-[900px] sm:grid sm:grid-cols-12 gap-3 p-3">
-  <div class="m-1 p-3 column sm:col-span-3">
+  <div class="mx-1 my-3 p-3 column sm:col-span-3">
     <Navbar client:load>
       <div class="text-lg text-blue-800 dark:text-blue-300">
         <h2><a href="/">About</a></h2>
         <h2><a href="/projects">Projects</a></h2>
-        <h2 class="flex flex-row flex-wrap items-center gap-1">
-          <a href="/ricing">Ricing</a>
-          <FaBowlRice class="inline" />
-        </h2>
+        <a href="/ricing">
+          <h2 class="flex flex-row flex-wrap items-center gap-1">
+            <span>Ricing</span>
+            <FaBowlRice class="inline" />
+          </h2>
+        </a>
         <ul>
           <li>
             <a href="/ricing/linux">Linux</a>
           </li>
-          <li >
+          <li>
             <a href="/ricing/macos">MacOS</a>
           </li>
         </ul>
-        <h2 class="flex flex-row flex-wrap items-center gap-1">
-          <a href="/mop">MOP</a>
-          <FaBroom class="inline" />
-        </h2>
+        <a href="/mop">
+          <h2 class="flex flex-row flex-wrap items-center gap-1">
+            <span>MOP</span>
+            <FaBroom class="inline" />
+          </h2>
+        </a>
         <h2><a href="/resume.pdf">Resume</a></h2>
       </div>
       <DarkMode client:idle />
     </Navbar>
   </div>
-  <div class="m-1 p-3 column sm:col-span-9">
+  <div class="mx-1 my-3 p-3 column sm:col-span-9">
     <slot/>
   </div>
 </div>
@@ -45,9 +49,11 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
     @apply text-blue-800 dark:text-blue-300 text-lg
   }
   a {
-    @apply duration-200 no-underline hover:underline decoration-dashed decoration-blue-800 dark:decoration-blue-300
+    @apply duration-200 underline decoration-blue-800 dark:decoration-blue-300 hover:font-semibold
   }
   .column {
-    @apply shadow-lg dark:shadow-gray-600 shadow-gray-400 border dark:border-gray-600 border-gray-400
+    @apply shadow-md hover:shadow-lg hover:-translate-y-[1px] dark:shadow-gray-600 shadow-gray-400 border
+    dark:border-gray-600 border-gray-400
+    duration-200
   }
 </style>
