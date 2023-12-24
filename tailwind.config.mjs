@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         'main': '#750014',
-        'main-dark': '#ff1423',
+        'main-dark': '#00ad00',
       },
     },
     fontFamily: {

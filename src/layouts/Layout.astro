@@ -28,15 +28,15 @@ const { content } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{content.title}</title>
 	</head>
-	<body class="dark:bg-[#121212] dark:text-white font-mono">
+	<body class="dark:bg-[#212326] dark:text-white font-mono">
 		<Body>
 			<slot />
 		</Body>
-		<footer class="text-gray-600 dark:text-gray-400 p-3 text-center">
+		<footer class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm">
       Made with Astro, React, and TailwindCSS. See the source code on
       <a
         href="https://github.com/junikimm717/personal-website-v5"
-        class="underline"
+        class="underline text-main dark:text-main-dark"
       >
         GitHub.
       </a>
