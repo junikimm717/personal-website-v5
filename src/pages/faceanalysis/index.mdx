@@ -1,0 +1,29 @@
+---
+layout: "@layouts/MdxPage.astro"
+title: "Face Analysis"
+---
+
+# Face Analysis Research Group
+
+Since July 2022, when I first attended the Garcia Summer Research Program, I
+have been working with Dr. Pawel Polak and PhD candidate Zhikang Dong to better
+understand facial muscle movements through computer vision and deep learning
+techniques. Recently, I have been implementing a kernel smoothing
+operator to target regions of the face corresponding to specific muscle groups.
+
+import {Image} from 'astro:assets';
+import Happy from './happy.jpg';
+import Sad from './sad.jpg';
+import Contours from './contours.jpeg';
+import Lady from './lady.jpeg';
+
+<div class="flex flex-wrap justify-center items-center gap-3">
+  <Image src={Contours} width={400} style="width:200px;" alt="Muscle Contours with EFD" />
+  <Image src={Lady} width={400} style="width:200px;" alt="Specific muscle groups" />
+  <Image src={Happy} width={400} style="width:200px;" alt="Happy Expression" />
+  <Image src={Sad} width={400} style="width:200px;" alt="Sad Expression" />
+</div>
+
+- Med-NEURIPS 2023 [poster](/research/medneurips_2023_poster.pdf) and
+  [abstract](https://drive.google.com/file/d/1zNdYylnPQRDGVTjOZBOi0w2On25bd-SV/view)
+- [2022 ArXiV Preprint](https://arxiv.org/pdf/2211.00233.pdf)

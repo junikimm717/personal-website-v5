@@ -3,28 +3,31 @@ import Navbar from './Navbar'
 import DarkMode from './DarkMode'
 
 import {FaBowlRice, FaBroom} from 'react-icons/fa6'
+import { FaTheaterMasks } from "react-icons/fa";
+
 ---
 
 <div class="mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12 gap-3 p-3">
   <div class="my-3 twocol:col-span-3 font-sans">
     <Navbar client:load>
-      <div class="text-lg text-main dark:text-main-dark">
+      <div class="text-lg text-primary dark:text-primary-dark">
         <div class="nav-item"><a href="/">About</a></div>
         <div class="nav-item"><a href="/dev">Projects</a></div>
+        <div class="nav-item">Setups</div>
         <ul>
           <li>
-            <a href="/dev/setup">Dev Setup</a>
+            <a href="/dev/setup">Dev</a>
           </li>
           <li>
             <a href="/dev/school">School</a>
           </li>
         </ul>
-        <a href="/ricing">
-          <div class="flex flex-row flex-wrap items-center gap-1 nav-item">
+        <div class="inline-block nav-item">
+          <a href="/ricing" class="flex flex-row flex-wrap items-center gap-1">
             <span>Ricing</span>
             <FaBowlRice class="inline" />
-          </div>
-        </a>
+            </a>
+        </div>
         <ul>
           <li>
             <a href="/ricing/linux">Linux</a>
@@ -33,12 +36,23 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
             <a href="/ricing/macos">MacOS</a>
           </li>
         </ul>
-        <a href="/mop">
-          <div class="flex flex-row flex-wrap items-center gap-1 nav-item">
+        <div class="inline-block nav-item">
+          <a href="/mop" class="flex flex-row flex-wrap items-center gap-1">
             <span>MOP</span>
             <FaBroom class="inline" />
-          </div>
-        </a>
+            </a>
+        </div>
+        <div class="nav-item">Research</div>
+        <ul>
+          <li>
+            <div class="inline-block nav-item">
+              <a href="/faceanalysis" class="flex flex-row flex-wrap items-center gap-1">
+                <span>Faces</span>
+                <FaTheaterMasks class="inline" />
+              </a>
+            </div>
+          </li>
+        </ul>
         <div class="nav-item"><a href="/resume.pdf">Resume</a></div>
       </div>
       <DarkMode client:idle />
@@ -51,12 +65,15 @@ import {FaBowlRice, FaBroom} from 'react-icons/fa6'
 
 <style scoped>
   ul {
-    @apply text-main dark:text-main-dark list-disc list-inside text-base
+    @apply list-disc list-inside text-base
+  }
+  li {
+    @apply text-black dark:text-white
   }
   div.nav-item {
-    @apply text-main dark:text-main-dark text-lg
+    @apply text-lg dark:text-white text-black
   }
   a {
-    @apply duration-200 underline decoration-main dark:decoration-main-dark hover:font-semibold
+    @apply duration-200 underline text-primary dark:text-primary-dark decoration-primary dark:decoration-primary-dark hover:font-semibold
   }
 </style>
