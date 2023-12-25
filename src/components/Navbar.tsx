@@ -5,7 +5,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
   const small = useMediaQuery("(max-width: 700px)");
   const [open, setOpen] = useState<boolean>(false);
   return small ? (
-    <div className="column mx-1 p-3">
+    <div id="navone" className="column mx-1 p-3">
       <div className="flex flex-row justify-between">
         <h1 className="text-lg font-extrabold">Juni C. Kim</h1>
         <button
@@ -19,7 +19,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
       <div className="block twocol:hidden">{!open ? null : props.children}</div>
     </div>
   ) : (
-    <div className="column mx-1 p-3 top-6 sticky">
+    <div id="navtwo" className="column mx-1 p-3 top-6 sticky">
       <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
       <div className="hidden twocol:block">{props.children}</div>
     </div>
