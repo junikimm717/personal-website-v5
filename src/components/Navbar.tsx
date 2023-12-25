@@ -16,12 +16,12 @@ export default function Navbar(props: { children: React.ReactNode }) {
           {open ? <FaChevronUp /> : <FaChevronDown />}
         </button>
       </div>
-      <div className="block twocol:hidden">{!open ? null : props.children}</div>
+      <div className="block twocol:hidden font-mono">{!open ? null : props.children}</div>
     </div>
   ) : (
     <div id="navtwo" className="column mx-1 p-3 top-6 sticky">
       <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
-      <div className="hidden twocol:block">{props.children}</div>
+      <div className="hidden twocol:block font-mono">{props.children}</div>
     </div>
   );
 }
