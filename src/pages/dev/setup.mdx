@@ -24,37 +24,46 @@ I use a custom neovim setup with LSP, Telescope, and all the
 other goodies baked in. I like the catppuccin color scheme, so that's used. You
 can find it [on my git server](https://git.junickim.me/junikimm717/nvim2023).
 
-I've also written a set of vimrc's with features that one would expect from a
-modern editor, available [on my git
-server](https://git.junickim.me/junikimm717/vim2023). Just `curl -LJ` a vimrc
-into `~/.vimrc` and when you open `vim`, setup will occur automatically with no
-further intervention.
+I've also written a [set of
+vimrc's](https://git.junickim.me/junikimm717/vim2023) with my favorite settings
+and features that one would expect from a modern editor. They're meant to be
+dropped onto newly minted servers or containers for immediate use.
+
+```bash
+# Full-featured LSP version (requires git)
+curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/lsp.vimrc -o $HOME/.vimrc
+# Version with minimal plugins (requires git)
+curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/minimal.vimrc -o $HOME/.vimrc
+# No plugins required (good for bare minimal container or vps instances)
+curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/noplug.vimrc -o $HOME/.vimrc
+```
 
 ## Preferences
 
 Everything here is just my opinion, and you can theoretically build anything in
 any Turing-complete language. That being said, I do find certain frameworks and
-languages to be nicer to work with than others. If I had to start a new project
-right now, I would probably choose a subset of the following technologies given
-they end up being useful:
+languages nicer to work with than others. If I had to start a new project right
+now, I would probably choose a subset of the following technologies given they
+end up being useful:
 
 - [Go](https://golang.org); as one of my friends put it, Go is basically the
-  Python of compiled languages. It's very easy to work with, the module system
-  is dead-simple, and it's very good on all the performance benchmarks.
+  Python of compiled languages. It's very easy to work with (cough cough Rust
+  &gt;_&lt;), the module system is dead-simple, and it's quite performant.
 - [Django](https://www.djangoproject.com/); good for any web project of
   sufficiently large complexity. There's no magic (a big plus for me), and the
   docs are very helpful.
 - [Docker](https://docker.com); the default way to containerize applications.
   It works seamlessly and is quite intuitive to use.
-- [Nix](https://nixos.org); reproducible builds	&hearts; only downsides are that
-  docs are kinda bad and bug fixes on `nixpkgs` take forever to be
-  pushed.
+- [Nix Flakes](https://nixos.wiki/wiki/Flakes); reproducible builds
+  &hearts; only downsides are that docs are kinda bad and bug fixes on nixpkgs
+  take forever to be pushed.
 - [TypeScript](https://typescriptlang.org); I often have to do nontrivial
   frontend work, and I'm not moving away from the sweet sweet LSP completions
   anytime soon.
 - [TailwindCSS](https://tailwindcss.org) or [SimpleCSS](https://simplecss.org);
-  I am never moving back to semantic CSS ever again.
+  I am never moving back to semantic styles ever again.
 - [Astro](https://astro.build); I first used this when writing up PureMOOt
-  documentation. It is now my best friend for any content-rich website.
+  documentation. It is now my best friend for any content-rich website,
+  including this one!
 - [React](https://react.dev); First JavaScript framework I learned, used it ever
   since.
