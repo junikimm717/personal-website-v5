@@ -5,7 +5,7 @@ title: "School"
 
 # School Setup
 
-import {Image} from 'astro:assets';
+import Imagelist from "@components/Imagelist.astro";
 
 ## Plain Text
 
@@ -27,18 +27,20 @@ In my house is a Raspberry Pi (which I won from a programming competition) and a
 14-year-old Dell workstation that I revived with FreeBSD. Outside my house, I
 have a VPS instance from DigitalOcean.
 
-import Dell from './dell.jpg'
-import RPI from './rpi.jpg'
+import Dell from "./dell.jpg";
+import RPI from "./rpi.jpg";
 
-<figure>
-  <div class="flex flex-wrap justify-center items-center gap-3">
-    <Image src={RPI} width={400} style="width:200px;" alt="Dell" />
-    <Image src={Dell} width={400} style="width:200px;" alt="RPI" />
-  </div>
-  <figcaption class="text-center">
-    School servers in the house; the Raspberry Pi and the Dell Inspiron respectively.
-  </figcaption>
-</figure>
+<Imagelist
+  images={[
+    [RPI, "RPI"],
+    [Dell, "Dell"],
+  ]}
+  size={150}
+  dim="height"
+>
+  School servers in the house; the Raspberry Pi and the Dell Inspiron
+  respectively.
+</Imagelist>
 
 All three servers sync my schoolwork with each other through `syncthing` and
 create backups every 6 hours with `cron` and a script that looks something like

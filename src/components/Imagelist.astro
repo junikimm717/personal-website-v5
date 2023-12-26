@@ -1,0 +1,39 @@
+---
+import {getImage} from 'astro:assets'
+import type { GetImageResult, ImageMetadata } from 'astro';
+
+interface Props {
+  size: number;
+  dim?: 'width' | 'height'
+  images: [ImageMetadata, string][]
+}
+
+const SCALE = 2;
+const {size, dim = 'height', images} = Astro.props;
+
+let processed : GetImageResult[] = [];
+if (dim === 'width') {
+  processed = await Promise.all(images.map(img => getImage({src: img[0], format:'webp', width:size*SCALE})))
+} else {
+  processed = await Promise.all(images.map(img => getImage({src: img[0], format:'webp', height:size*SCALE})))
+}
+
+---
+
+<figure>
+  <div class="flex flex-wrap justify-center items-center gap-3">
+    {processed.map((img, index) => (
+      <img 
+        src={img.src}
+        width={dim === 'height' ? size * images[index][0].width/images[index][0].height : size}
+        decoding="async"
+        loading="lazy"
+        alt={images[index][1]}
+        style="margin-top: 0; margin-bottom: 0;"
+        />
+      ))}
+  </div>
+  <figcaption class="text-center">
+    <slot />
+  </figcaption>
+</figure>

@@ -3,23 +3,18 @@ layout: "@layouts/MdxPage.astro"
 title: "Juni Kim"
 ---
 
-import { Image } from "astro:assets";
+import Imagelist from "@components/Imagelist.astro";
 
 # Welcome!
 
 import PFP from "./pfp.jpg";
-import Triangle from "./triangle.jpeg";
 
-<div class="flex justify-center items-center gap-3">
-  <div>
-    <Image src={PFP} width={300} style="width:150px" alt="Juni" />
-  </div>
-</div>
+<Imagelist images={[[PFP, "Juni"]]} size={150} dim="width" />
 
 I'm an incoming freshman at MIT with plans to major in CS and/or Math. I used to
-be a hardcore fencing main (Épée), but, over the course of the pandemic, I switched to
-olympiads and computer shenanigans, where I remain to this day. In my junior
-year, I placed 23rd overall in the USAMO and participated in the
+be a hardcore fencing main (Épée), but, over the course of the pandemic, I
+switched to olympiads and computer shenanigans, where I remain to this day. In
+my junior year, I placed 23rd overall in the USAMO and participated in the
 Mathematical Olympiad Program.
 
 Although retired from olympiads, I continue to program random things in the hope
@@ -30,12 +25,12 @@ Rubik's Cube algorithms, and spend too much time on Discord.
 
 ## Contact
 
-|                  |                                                                     |
-| ---------------- | ------------------------------------------------------------------- |
-| Discord          | `junickim`                                                          |
-| Email            | [junikimm717@gmail.com](mailto:junikimm717@gmail.com)               |
-| GitHub           | [junikimm717](https://github.com/junikimm717)                       |
-| Instagram        | [junichristopherkim](https://www.instagram.com/junichristopherkim/) |
-| LinkedIn         | [junickim](https://linkedin.com/in/junickim)                        |
-| AoPS             | [jkmmm3](https://artofproblemsolving.com/community/user/jkmmm3)     |
-| Manifold         | [JuniKim](https://manifold.markets/JuniKim)                         |
+|           |                                                                     |
+| --------- | ------------------------------------------------------------------- |
+| Discord   | `junickim`                                                          |
+| Email     | [junikimm717@gmail.com](mailto:junikimm717@gmail.com)               |
+| GitHub    | [junikimm717](https://github.com/junikimm717)                       |
+| Instagram | [junichristopherkim](https://www.instagram.com/junichristopherkim/) |
+| LinkedIn  | [junickim](https://linkedin.com/in/junickim)                        |
+| AoPS      | [jkmmm3](https://artofproblemsolving.com/community/user/jkmmm3)     |
+| Manifold  | [JuniKim](https://manifold.markets/JuniKim)                         |

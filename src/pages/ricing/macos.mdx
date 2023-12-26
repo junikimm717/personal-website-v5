@@ -3,7 +3,7 @@ layout: "@layouts/MdxPage.astro"
 title: "MacOS Rices"
 ---
 
-import { Image } from "astro:assets";
+import Imagelist from "@components/Imagelist.astro";
 
 # MacOS Rices
 
@@ -13,28 +13,22 @@ branches for my MacBook and my iMac.
 
 import MBP from "./mbp_catppuccin.png";
 
-<figure>
-  <Image src={MBP} width={1400} style="width:700px;" alt="MBP Catppuccin Rice" />
-  <figcaption class="text-center">
-    MacBook Pro rice with Yabai, Sketchybar, and Borders. Catppuccin color
-    scheme.
-  </figcaption>
-</figure>
+<Imagelist images={[[MBP, "MBP Catppuccin Rice"]]} size={600} dim={"width"}>
+  MacBook Pro rice with Yabai, Sketchybar, and Borders. Catppuccin color scheme.
+</Imagelist>
 
 import IMAC from "./imac_gruvbox.png";
 
-<figure>
-  <Image src={IMAC} width={1400} style="width:700px;" alt="iMac Gruvbox Rice" />
-  <figcaption class="text-center">
-    iMac rice with Yabai, Sketchybar, and Borders. Gruvbox color scheme.
-  </figcaption>
-</figure>
+<Imagelist images={[[IMAC, "iMac Gruvbox Rice"]]} size={600} dim={"width"}>
+  iMac rice with Yabai, Sketchybar, and Borders. Gruvbox color scheme.
+</Imagelist>
 
 import IMACCat from "./imac_catppuccin.png";
 
-<figure>
-  <Image src={IMACCat} width={1400} style="width:700px;" alt="iMac Catppuccin Rice" />
-  <figcaption class="text-center">
-    Older iMac rice with Yabai and Sketchybar. Catppuccin color scheme.
-  </figcaption>
-</figure>
+<Imagelist
+  images={[[IMACCat, "iMac Catppuccin Rice"]]}
+  size={600}
+  dim={"width"}
+>
+  Older iMac rice with Yabai and Sketchybar. Catppuccin color scheme.
+</Imagelist>

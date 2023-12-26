@@ -3,30 +3,29 @@ layout: "@layouts/MdxPage.astro"
 title: "MOP"
 ---
 
-import {Image} from 'astro:assets';
+import { Image } from "astro:assets";
 
 # MOP
 
-In 2023, I attended the [Mathematical Olympiad Program
-(MOP)](https://web.evanchen.cc/mop.html), a three-week summer camp held at
-Carnegie Mellon University, as a member of the blue group. It was easily one of
-the most transformative experiences of my life, and I've remained connected to
-the community there ever since.
+In 2023, I attended the
+[Mathematical Olympiad Program (MOP)](https://web.evanchen.cc/mop.html), a
+three-week summer camp held at Carnegie Mellon University, as a member of the
+blue group. It was easily one of the most transformative experiences of my life,
+and I've remained connected to the community there ever since.
 
 ## PureMOOt
 
+import Imagelist from "@components/Imagelist.astro";
 import Puremoot from "./puremootation.png";
 
-<div class="flex justify-center items-center gap-3 m-0 p-0">
-<div class="m-0 p-0">
-<Image src={Puremoot} width={800} style="width:400px" alt="puremootation" />
-</div></div>
+<Imagelist images={[[Puremoot, "puremootation"]]} size={400} dim="width" />
 
 I wrote a Discord bot for our server (Lemonade Shop) that issues random pairs of
 people every day; pairs are encouraged to converse in DM's and get to know each
 other. PureMOOt also implements anonymous broadcasting and a cursed little game
-from Art of Problem Solving called [Reaper](https://aops.com/reaper). People mostly play blitz rounds
-because reaping at 3AM is a winning strategy but terrible for one's health.
+from Art of Problem Solving called [Reaper](https://aops.com/reaper). People
+mostly play blitz rounds because reaping at 3AM is a winning strategy but
+terrible for one's health.
 
 [Docs](https://puremoot.junickim.me/docs)
 [GitHub](https://github.com/junikimm717/puremoot)
