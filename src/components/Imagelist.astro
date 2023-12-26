@@ -26,6 +26,7 @@ if (dim === 'width') {
       <img 
         src={img.src}
         width={dim === 'height' ? size * images[index][0].width/images[index][0].height : size}
+        height={dim === 'width' ? size * images[index][0].height/images[index][0].width : size}
         decoding="async"
         loading="lazy"
         alt={images[index][1]}
