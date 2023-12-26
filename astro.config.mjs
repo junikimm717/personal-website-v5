@@ -31,7 +31,7 @@ export default defineConfig({
     shikiConfig: {
       experimentalThemes: {
         light: "light-plus",
-        dark: "rose-pine-moon",
+        dark: "dark-plus",
       },
     },
   },

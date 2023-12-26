@@ -1,6 +1,7 @@
 ---
-import Body from '../components/Body.astro'
 import '@/base.css';
+import Body from '../components/Body.astro'
+import Contact from '@components/Contact.astro';
 
 interface Props {
   content: any;
@@ -33,6 +34,9 @@ const { content } = Astro.props;
 			<slot />
 		</Body>
 		<footer class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm">
+
+
+			<Contact />
       Made with Astro, React, and TailwindCSS. See the source code on
       <a
         href="https://github.com/junikimm717/personal-website-v5"
