@@ -44,6 +44,14 @@ const { content } = Astro.props;
 			&copy; Juni Kim 2023-{new Date().getFullYear()}
 		</footer>
 	</body>
+	<script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-5CKPFSKGQ3"></script>
+	<script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'YOUR-ID-HERE');
+  </script>
 </html>
 <style is:global>
 html.dark .astro-code, html.dark .astro-code span {
