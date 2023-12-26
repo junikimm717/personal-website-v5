@@ -1,7 +1,7 @@
 ---
 import '@/base.css';
-import Body from '../components/Body.astro'
 import Contact from '@components/Contact.astro';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
   content: any;
@@ -13,11 +13,15 @@ const { content } = Astro.props;
 <html lang="en">
 	<head>
 		<script is:inline>
-			if (localStorage.getItem("dark") === "true") {
-				document.documentElement.classList.add("dark")
-			} else {
-				document.documentElement.classList.remove("dark")
+			function colorMode() {
+				if (localStorage.getItem("dark") === "true") {
+					document.documentElement.classList.add("dark")
+				} else {
+					document.documentElement.classList.remove("dark")
+				}
 			}
+			colorMode();
+			document.addEventListener('astro:after-swap', colorMode);
 		</script>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Juni's Personal Website" />
@@ -28,11 +32,10 @@ const { content } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{content.title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="dark:bg-darkbg dark:text-white font-mono">
-		<Body>
-			<slot />
-		</Body>
+		<slot />
 		<footer class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm">
 
 
