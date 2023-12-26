@@ -3,10 +3,11 @@ layout: "@layouts/MdxPage.astro"
 title: "Linux Rices"
 ---
 
-import { Image } from "astro:assets";
 import Imagelist from "@components/Imagelist.astro";
 
 # Linux Rices
+
+## Lemur
 
 import Nixos from "./lempnixos.jpeg";
 import Arch from "./lemparch.jpeg";
@@ -24,6 +25,15 @@ import Arch from "./lemparch.jpeg";
   [GitHub](https://github.com/junikimm717/nixosdots).
 </Imagelist>
 
+import i32021 from "./2021_i3rice.png";
+
+<Imagelist images={[[i32021, "2021 i3 Rice"]]} size={600} dim="width">
+  An i3 Rice on the Lemur Pro from 2021. Dotfiles on
+  [GitHub](https://github.com/junikimm717/Dotfiles-i3-rice).
+</Imagelist>
+
+## VMs
+
 import Popberry from "./popberry.png";
 
 <Imagelist images={[[Popberry, "Popberry"]]} size={600} dim="width">
@@ -35,11 +45,4 @@ import Debiancwm from "./debiancwm.png";
 
 <Imagelist images={[[Debiancwm, "Debian CWM"]]} size={600} dim="width">
   Debian Rice on a VM with Calm WM, Picom, and Polybar.
-</Imagelist>
-
-import i32021 from "./2021_i3rice.png";
-
-<Imagelist images={[[i32021, "2021 i3 Rice"]]} size={600} dim="width">
-  An i3 Rice on the Lemur Pro from 2021. Dotfiles on
-  [GitHub](https://github.com/junikimm717/Dotfiles-i3-rice).
 </Imagelist>

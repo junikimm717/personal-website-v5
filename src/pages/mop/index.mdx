@@ -3,7 +3,7 @@ layout: "@layouts/MdxPage.astro"
 title: "MOP"
 ---
 
-import { Image } from "astro:assets";
+import Imagelist from "@components/Imagelist.astro";
 
 # MOP
 
@@ -15,7 +15,6 @@ and I've remained connected to the community there ever since.
 
 ## PureMOOt
 
-import Imagelist from "@components/Imagelist.astro";
 import Puremoot from "./puremootation.png";
 
 <Imagelist images={[[Puremoot, "puremootation"]]} size={400} dim="width" />

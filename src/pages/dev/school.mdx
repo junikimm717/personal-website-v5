@@ -20,7 +20,8 @@ use [TeXbld](/dev/#texbld).
 ## Servers
 
 Due to the peculiarities of my workflow, I hacked together a custom
-synchronization and backup system.
+synchronization and backup system. The future of this setup given my looming
+move to Cambridge is yet to be decided.
 
 The main storage system involves three servers following the 3-2-1 backup rule.
 In my house is a Raspberry Pi (which I won from a programming competition) and a
@@ -40,6 +41,21 @@ import RPI from "./rpi.jpg";
 >
   School servers in the house; the Raspberry Pi and the Dell Inspiron
   respectively.
+</Imagelist>
+
+import ST from "./syncthing.png";
+import FI from "./fancyindex.png";
+
+<Imagelist
+  images={[
+    [ST, "Syncthing Dashboard"],
+    [FI, "FancyIndex"],
+  ]}
+  size={120}
+  dim="height"
+>
+  Syncthing Dashboard and Fancyindex browsing respectively, all on the Raspberry
+  Pi
 </Imagelist>
 
 All three servers sync my schoolwork with each other through `syncthing` and
