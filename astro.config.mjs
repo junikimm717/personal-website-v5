@@ -30,7 +30,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       experimentalThemes: {
-        light: "rose-pine-dawn",
+        light: "light-plus",
         dark: "rose-pine-moon",
       },
     },

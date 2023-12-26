@@ -6,10 +6,11 @@ interface Props {
   size: number;
   dim?: 'width' | 'height'
   images: [ImageMetadata, string][]
+  nonlazy?: boolean
 }
 
 const SCALE = 2;
-const {size, dim = 'height', images} = Astro.props;
+const {nonlazy, size, dim = 'height', images} = Astro.props;
 
 let processed : GetImageResult[] = [];
 if (dim === 'width') {
@@ -28,7 +29,7 @@ if (dim === 'width') {
         width={dim === 'height' ? size * images[index][0].width/images[index][0].height : size}
         height={dim === 'width' ? size * images[index][0].height/images[index][0].width : size}
         decoding="async"
-        loading="lazy"
+        loading={nonlazy ? "eager" :"lazy"}
         alt={images[index][1]}
         style="margin-top: 0; margin-bottom: 0;"
         />
