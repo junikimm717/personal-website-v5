@@ -9,22 +9,30 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   site: "https://junickim.me",
-  integrations: [tailwind(), react(), mdx(), sitemap(), partytown({
-    config: {
-      forward: ['dataLayer.push'],
-    },
-  })],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    react(),
+    mdx(),
+    sitemap(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+  ],
   vite: {
     ssr: {
-      noExternal: ["react-icons"]
-    }
+      noExternal: ["react-icons"],
+    },
   },
   markdown: {
     shikiConfig: {
       experimentalThemes: {
         light: "rose-pine-dawn",
-        dark: "rose-pine-moon"
-      }
-    }
-  }
+        dark: "rose-pine-moon",
+      },
+    },
+  },
 });
