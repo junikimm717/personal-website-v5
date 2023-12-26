@@ -22,12 +22,10 @@ import { FaTheaterMasks } from "react-icons/fa";
             <a href="/dev/school">School</a>
           </li>
         </ul>
-        <div class="inline-block nav-item">
-          <a href="/ricing" class="flex flex-row flex-wrap items-center gap-1">
-            <span>Ricing</span>
-            <FaBowlRice class="inline" />
-            </a>
-        </div>
+        <a href="/ricing" class="nav-item">
+          Ricing
+          <FaBowlRice />
+        </a>
         <ul>
           <li>
             <a href="/ricing/linux">Linux</a>
@@ -36,21 +34,17 @@ import { FaTheaterMasks } from "react-icons/fa";
             <a href="/ricing/macos">MacOS</a>
           </li>
         </ul>
-        <div class="inline-block nav-item">
-          <a href="/mop" class="flex flex-row flex-wrap items-center gap-1">
-            <span>MOP</span>
-            <FaBroom class="inline" />
-            </a>
-        </div>
+        <a href="/mop" class="nav-item">
+          MOP
+          <FaBroom class="inline" />
+        </a>
         <div class="nav-item">Research</div>
         <ul>
           <li>
-            <div class="inline-block nav-item">
-              <a href="/faceanalysis" class="flex flex-row flex-wrap items-center gap-1">
-                <span>Faces</span>
-                <FaTheaterMasks class="inline" />
-              </a>
-            </div>
+            <a href="/faceanalysis" class="nav-item">
+              Faces
+              <FaTheaterMasks class="inline" />
+            </a>
           </li>
         </ul>
         <div class="nav-item"><a href="/resume.pdf">Resume</a></div>
@@ -75,5 +69,8 @@ import { FaTheaterMasks } from "react-icons/fa";
   }
   a {
     @apply duration-200 underline text-primary dark:text-primary-dark decoration-primary dark:decoration-primary-dark hover:font-semibold
+  }
+  li a {
+    @apply inline-block;
   }
 </style>
