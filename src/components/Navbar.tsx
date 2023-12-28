@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useMediaQuery from "@/lib/mediaquery";
 
 export default function Navbar(props: { children: React.ReactNode }) {
   const small = useMediaQuery("(max-width: 700px)");
@@ -58,18 +59,4 @@ export default function Navbar(props: { children: React.ReactNode }) {
       <div className="hidden twocol:block font-mono">{props.children}</div>
     </div>
   );
-}
-
-function useMediaQuery(mediaQueryString: string) {
-  const [matches, setMatches] = React.useState<boolean | null>(null);
-
-  React.useEffect(() => {
-    const mediaQueryList = window.matchMedia(mediaQueryString);
-    const listener = () => setMatches(!!mediaQueryList.matches);
-    listener();
-    mediaQueryList.addListener(listener);
-    return () => mediaQueryList.removeListener(listener);
-  }, [mediaQueryString]);
-
-  return matches;
 }
