@@ -1,0 +1,15 @@
+[build]
+  base = "/"
+  publish = "dist/"
+  command = "npm run build"
+
+[[redirects]]
+  from = "https://junickim.me/*"
+  to = "https://junic.kim/:splat"
+  status = 301
+  force = true
+[[redirects]]
+  from = "https://www.junickim.me/*"
+  to = "https://junic.kim/:splat"
+  status = 301
+  force = true
