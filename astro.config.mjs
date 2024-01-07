@@ -8,7 +8,7 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://junickim.me",
+  site: "https://junic.kim",
   integrations: [
     tailwind({
       applyBaseStyles: false,

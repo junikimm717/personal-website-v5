@@ -19,7 +19,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
             width="14"
             viewBox="0 0 512 512"
             className={
-              "dark:fill-white fill-black transition-all duration-500" +
+              "dark:fill-white fill-black transition-all duration-50" +
               " " +
               (open ? "rotate-180" : "rotate-0")
             }
@@ -47,7 +47,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
             width="14"
             viewBox="0 0 512 512"
             className={
-              "dark:fill-white fill-black transition-all duration-500" +
+              "dark:fill-white fill-black transition-all duration-50" +
               " " +
               (open ? "rotate-180" : "rotate-0")
             }
