@@ -2,7 +2,7 @@
 import Navbar from './Navbar'
 import DarkMode from './DarkMode'
 
-import {FaBowlRice, FaBroom} from 'react-icons/fa6'
+import { FaBowlRice, FaBroom, FaCat } from 'react-icons/fa6'
 import { FaTheaterMasks } from "react-icons/fa";
 import { GiRodOfAsclepius } from "react-icons/gi";
 
@@ -35,10 +35,12 @@ import { GiRodOfAsclepius } from "react-icons/gi";
             <a href="/ricing/macos">MacOS</a>
           </li>
         </ul>
-        <a href="/mop" class="nav-item">
-          MOP
-          <FaBroom class="inline" />
-        </a>
+        <div class="nav-item">
+          <a href="/mop">
+            MOP
+            <FaBroom class="inline" />
+          </a>
+        </div>
         <div class="nav-item">Research</div>
         <ul>
           <li>
@@ -55,6 +57,12 @@ import { GiRodOfAsclepius } from "react-icons/gi";
           </li>
         </ul>
         <div class="nav-item"><a href="/resume.pdf">Resume</a></div>
+        <div class="nav-item">
+          <a href="/cats">
+            Cats
+            <FaCat class="inline" />
+          </a>
+        </div>
       </div>
       <DarkMode client:load />
     </Navbar>
