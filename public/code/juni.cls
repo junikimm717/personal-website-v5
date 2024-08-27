@@ -1,7 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{juni}[2023/08/28]
 
-
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \DeclareOption{doublespaced}{\linespread{2}}
 \ProcessOptions\relax
@@ -12,7 +11,7 @@
 
 \usepackage[margin=1.0in]{geometry}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,thmtools}
-\usepackage[usenames,svgnames,dvipsnames,table]{xcolor}
+\usepackage[svgnames,dvipsnames,table]{xcolor}
 \usepackage[framemethod=TikZ]{mdframed}
 
 \usepackage{graphicx}
@@ -50,6 +49,14 @@
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\RR}{\mathbb{R}}
 
+\newcommand{\ii}{\mathbf{i}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\kk}{\mathbf{k}}
+\newcommand{\rr}{\mathbf{r}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\dff}{\mathrm{d}}
+
 \newcommand{\paren}[1]{\left( #1 \right)}
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
@@ -80,7 +87,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % working with long nested outlines
-\usepackage{enumitem}
+\usepackage[shortlabels]{enumitem}
 \setlistdepth{9}
 \setlist[itemize,1]{label=$\bullet$}
 \setlist[itemize,2]{label=$\bullet$}
