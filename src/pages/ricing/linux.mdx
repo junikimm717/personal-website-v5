@@ -21,6 +21,19 @@ import Imagelist from "@components/Imagelist.astro";
 
 ## Bare Metal
 
+import Arch2024 from "./arch2024.png";
+
+<Imagelist
+  images={[
+    [Arch2024, "Darp Arch rice"],
+  ]}
+  size={600}
+  dim="width"
+>
+  First time on Wayland! An Everforest Arch rice for my System76 Darter Pro with
+  Hyprland and Waybar.
+</Imagelist>
+
 import Nixos from "./lempnixos2.png";
 import Arch from "./lemparch.jpeg";
 
@@ -31,7 +44,6 @@ import Arch from "./lemparch.jpeg";
   ]}
   size={600}
   dim="width"
-  nonlazy
 >
   NixOS and Arch Rices (respectively) for my System76 Lemur Pro with BSPWM,
   Polybar, and EWW. Dotfiles for the former on
