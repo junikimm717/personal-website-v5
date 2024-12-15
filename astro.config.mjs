@@ -30,10 +30,7 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      experimentalThemes: {
-        light: "light-plus",
-        dark: "dark-plus",
-      },
+      theme: 'monokai'
     },
   },
 });
