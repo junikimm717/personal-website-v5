@@ -1,7 +1,7 @@
 ---
-import '@/base.css';
-import Contact from '@components/Contact.astro';
-import { ViewTransitions } from 'astro:transitions';
+import "@/base.css";
+import Contact from "@components/Contact.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   content: any;
@@ -11,36 +11,36 @@ const { content } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<script is:inline>
-			function colorMode() {
-				if (localStorage.getItem("dark") === "true") {
-					document.documentElement.classList.add("dark")
-				} else {
-					document.documentElement.classList.remove("dark")
-				}
-			}
-			colorMode();
-			document.addEventListener('astro:after-swap', colorMode);
-		</script>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Juni's Personal Website" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="icon" type="image/png" href="/triangle.jpeg" />
+  <head>
+    <script is:inline>
+      function colorMode() {
+        if (localStorage.getItem("dark") === "true") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+      colorMode();
+      document.addEventListener("astro:after-swap", colorMode);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Juni's Personal Website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="/triangle.jpeg" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{content.title}</title>
-		<ViewTransitions />
-	</head>
-	<body class="dark:bg-darkbg dark:text-white font-mono">
-		<slot />
-		<footer class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm">
-
-
-			<Contact />
+    <meta name="generator" content={Astro.generator} />
+    <title>{content.title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="dark:bg-darkbg dark:text-white font-mono">
+    <slot />
+    <footer
+      class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm"
+    >
+      <Contact />
       Made with Astro, React, and TailwindCSS. See the source code on
       <a
         href="https://github.com/junikimm717/personal-website-v5"
@@ -49,16 +49,20 @@ const { content } = Astro.props;
       >
         GitHub.
       </a>
-      <br>
-			&copy; Juni Kim 2023-{new Date().getFullYear()}
-		</footer>
-	</body>
-	<script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-5CKPFSKGQ3"></script>
-	<script type="text/partytown">
+      <br />
+      &copy; Juni Kim 2023-{new Date().getFullYear()}
+    </footer>
+  </body><script
+    async
+    type="text/partytown"
+    src="https://www.googletagmanager.com/gtag/js?id=G-5CKPFSKGQ3"></script>
+  <script type="text/partytown">
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    gtag('config', 'YOUR-ID-HERE');
+    gtag("config", "YOUR-ID-HERE");
   </script>
 </html>

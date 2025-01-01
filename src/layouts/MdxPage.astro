@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Body from '../components/Body.astro'
+import Layout from "../layouts/Layout.astro";
+import Body from "../components/Body.astro";
 
 interface Props {
   content: any;
@@ -9,17 +9,17 @@ const { content } = Astro.props;
 ---
 
 <Layout {content}>
-	<Body>
-    <div class="m-0 p-0 prose dark:prose-invert prose-h1:font-extrabold prose-h2:font-bold prose-h3:font-semibold
+  <Body>
+    <div
+      class="m-0 p-0 prose dark:prose-invert prose-h1:font-extrabold prose-h2:font-bold prose-h3:font-semibold
     prose-a:underline prose-a:decoration-primary
     dark:prose-a:decoration-primary-dark prose-a:decoration-2 prose-figcaption:text-center
     prose-a:transition-all hover:prose-a:text-primary prose-sm twocol:prose-base
-    hover:prose-a:dark:text-primary-dark prose-headings:font-sans duration-500">
+    hover:prose-a:dark:text-primary-dark prose-headings:font-sans duration-500"
+    >
       <slot />
     </div>
-	</Body>
+  </Body>
 </Layout>
 
-<style is:global>
-
-</style>
+<style is:global></style>
