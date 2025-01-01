@@ -1,15 +1,16 @@
 ---
-import Navbar from './Navbar'
-import DarkMode from './DarkMode'
+import Navbar from "./Navbar";
+import DarkMode from "./DarkMode";
 
-import { FaBowlRice, FaBroom, FaCat } from 'react-icons/fa6'
+import { FaBowlRice, FaBroom, FaCat } from "react-icons/fa6";
 import { FaTheaterMasks } from "react-icons/fa";
 import { GiRodOfAsclepius } from "react-icons/gi";
-
 ---
 
 <div class="mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12 gap-3 p-3">
-  <div class="my-3 twocol:col-span-3 font-sans top-1 sticky twocol:static bg-white dark:bg-darkbg z-50">
+  <div
+    class="my-3 twocol:col-span-3 font-sans top-1 sticky twocol:static bg-white dark:bg-darkbg z-50"
+  >
     <Navbar client:load>
       <div class="text-lg text-primary dark:text-primary-dark">
         <div class="nav-item"><a href="/">About</a></div>
@@ -67,24 +68,26 @@ import { GiRodOfAsclepius } from "react-icons/gi";
       <DarkMode client:load />
     </Navbar>
   </div>
-  <div class="mx-1 my-3 p-3 column col-span-12 twocol:col-span-9 overflow-x-scroll">
-    <slot/>
+  <div
+    class="mx-1 my-3 p-3 column col-span-12 twocol:col-span-9 overflow-x-scroll"
+  >
+    <slot />
   </div>
 </div>
 
 <style scoped>
   ul {
-    @apply list-disc list-inside text-base
+    @apply list-disc list-inside text-base;
   }
   li {
-    @apply text-black dark:text-white
+    @apply text-black dark:text-white;
   }
   div.nav-item {
-    @apply text-lg dark:text-white text-black
+    @apply text-lg dark:text-white text-black;
   }
   a {
     @apply duration-200 underline text-black dark:text-white hover:text-primary hover:dark:text-primary-dark
-    decoration-2 decoration-primary dark:decoration-primary-dark
+    decoration-2 decoration-primary dark:decoration-primary-dark;
   }
   li a {
     @apply inline-block;
