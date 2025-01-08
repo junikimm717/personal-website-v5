@@ -8,7 +8,8 @@ title: "Workflow"
 ## Terminal
 
 I am a very big fan of tmux and oh-my-zsh, which allow me to navigate around my
-computers with minimal fuss. For tmux, I have [a hacked script](/code/tmuxs.sh)
+computers with minimal fuss. For tmux, I have a [dedicated sessionizer
+program](https://github.com/junikimm717/tmuxs)
 for fuzzy finding project directories. The following two lines in my zshrc
 configure the directories to be searched (separated by colons) and set up a
 custom keybinding for me to activate the script:
@@ -21,12 +22,7 @@ bindkey -s "^f" "tmuxs -d 4\n"
 ## Editor Configuration
 
 I use a [custom neovim setup](https://github.com/junikimm717/nvim2025) with
-LSP integration and theme switching.
-If you're on an x86 machine, you can try it by running
-
-```bash
-docker run -it junikimm717/nvim2025:latest
-````
+LSP integration and theme switching. You can try it via docker.
 
 I've also written a [set of
 vimrc's](https://git.junickim.me/junikimm717/vim2023) with my favorite settings
