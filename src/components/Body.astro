@@ -7,9 +7,10 @@ import { FaTheaterMasks } from "react-icons/fa";
 import { GiRodOfAsclepius } from "react-icons/gi";
 ---
 
-<div class="mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12 gap-3 p-3">
+<div class="gap-3 p-3 mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12">
   <div
-    class="my-3 twocol:col-span-3 font-sans top-1 sticky twocol:static bg-white dark:bg-darkbg z-50"
+    class="sticky top-1 z-50 my-3 font-sans bg-white twocol:col-span-3 twocol:static dark:bg-darkbg"
+    transition:persist
   >
     <Navbar client:load>
       <div class="text-lg text-primary dark:text-primary-dark">
@@ -39,7 +40,7 @@ import { GiRodOfAsclepius } from "react-icons/gi";
         <div class="nav-item">
           <a href="/mop">
             MOP
-            <FaBroom class="inline" />
+            <FaBroom className="inline" />
           </a>
         </div>
         <div class="nav-item">Research</div>
@@ -61,7 +62,7 @@ import { GiRodOfAsclepius } from "react-icons/gi";
         <div class="nav-item">
           <a href="/cats">
             Cats
-            <FaCat class="inline" />
+            <FaCat className="inline" />
           </a>
         </div>
       </div>
@@ -69,7 +70,7 @@ import { GiRodOfAsclepius } from "react-icons/gi";
     </Navbar>
   </div>
   <div
-    class="mx-1 my-3 p-3 column col-span-12 twocol:col-span-9 overflow-x-scroll"
+    class="overflow-x-scroll col-span-12 p-3 my-3 mx-1 column twocol:col-span-9"
   >
     <slot />
   </div>
@@ -86,7 +87,7 @@ import { GiRodOfAsclepius } from "react-icons/gi";
     @apply text-lg dark:text-white text-black;
   }
   a {
-    @apply duration-200 underline text-black dark:text-white hover:text-primary hover:dark:text-primary-dark
+    @apply duration-200 underline text-black dark:text-white hover:font-bold
     decoration-2 decoration-primary dark:decoration-primary-dark;
   }
   li a {

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import useMediaQuery from "@/lib/mediaquery";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Navbar(props: { children: React.ReactNode }) {
   const small = useMediaQuery("(max-width: 700px)");
   const [open, setOpen] = useState<boolean>(false);
   return small ? (
-    <div id="navone" className="column mx-1 p-3">
+    <nav id="navone" className="column mx-1 p-3">
       <div className="flex flex-row justify-between">
         <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
         <button
@@ -19,7 +20,7 @@ export default function Navbar(props: { children: React.ReactNode }) {
             width="14"
             viewBox="0 0 512 512"
             className={
-              "dark:fill-white fill-black transition-all duration-50" +
+              "dark:fill-white fill-black transition-all" +
               " " +
               (open ? "rotate-180" : "rotate-0")
             }
@@ -28,12 +29,28 @@ export default function Navbar(props: { children: React.ReactNode }) {
           </svg>
         </button>
       </div>
-      <div className="block twocol:hidden font-mono">
-        {!open ? null : props.children}
-      </div>
-    </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="navbar"
+            exit="exit"
+            animate="visible"
+            initial="hidden"
+            variants={{
+              hidden: { height: 0, opacity: 0 }, // Initially collapsed and invisible
+              visible: { height: "auto", opacity: 1 }, // Fully expanded and visible
+              exit: { height: 0, opacity: 0 }, // Collapse back to 0 height and invisible
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="block twocol:hidden font-mono overflow-y-hidden"
+          >
+            {props.children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   ) : (
-    <div id="navtwo" className="column mx-1 p-3 top-6 sticky">
+    <nav id="navtwo" className="column mx-1 p-3 top-6 sticky">
       <div className="flex flex-row justify-between">
         <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
         <button
@@ -57,6 +74,6 @@ export default function Navbar(props: { children: React.ReactNode }) {
         </button>
       </div>
       <div className="hidden twocol:block font-mono">{props.children}</div>
-    </div>
+    </nav>
   );
 }

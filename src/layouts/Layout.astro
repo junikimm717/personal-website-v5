@@ -1,7 +1,7 @@
 ---
 import "@/base.css";
 import Contact from "@components/Contact.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   content: any;
@@ -33,7 +33,7 @@ const { content } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{content.title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="dark:bg-darkbg dark:text-white font-mono">
     <slot />
@@ -45,7 +45,7 @@ const { content } = Astro.props;
       <a
         href="https://github.com/junikimm717/personal-website-v5"
         class="underline decoration-primary dark:decoration-primary-dark
-        text-black hover:text-primary dark:text-white hover:dark:text-primary-dark"
+        text-black hover:font-bold dark:text-white"
       >
         GitHub.
       </a>
