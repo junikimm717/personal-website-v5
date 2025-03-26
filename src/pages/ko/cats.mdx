@@ -1,0 +1,33 @@
+---
+layout: "@layouts/KoMdxPage.astro"
+title: "고양이"
+---
+
+import Imagelist from "@components/Imagelist.astro";
+
+import Mimi1 from "../cats/mimi_1.jpg";
+import Mimi2 from "../cats/mimi_2.jpg";
+import Coco1 from "../cats/coco_1.jpg";
+import Coco2 from "../cats/coco_2.jpg";
+
+# 고양이
+
+집 안에서 고양이 두마리를 키우고 있습니다.
+[인스타를](https://instagram.com/mimiwithcoco) 팔로우해주시기 바랍니다!
+
+## 미미 (형)
+
+<Imagelist images={[[Mimi1, "Mimi"], [Mimi2, "Mimi"]]} size={150} dim="height" nonlazy />
+
+3살된 친칠라 페르시안 공양이 입니다. 이상한 지세로 자고 새나 다람쥐를
+사냥하겠다며 마당을 계속 관찰하고있습니다. 그런데, 빗질 시간이 오면 신경질을
+무척 부립니다.
+
+## 코코
+
+<Imagelist images={[[Coco1, "Coco"], [Coco2, "Coco"]]} size={150} dim="height" nonlazy />
+
+1살된 아메리칸 숏해어 고양이 입니다. 사냥놀이를 좋아하며, 밥 먹는 시간은
+사랑합니다.
+
+[입양 영상](https://www.youtube.com/watch?v=CT01DP6iq_E)

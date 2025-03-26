@@ -1,0 +1,121 @@
+---
+layout: "@layouts/KoMdxPage.astro"
+title: "Ricing"
+---
+
+import Imagelist from "@components/Imagelist.astro";
+
+# 라이싱
+
+9학년 초반에 온라인 학교에서 만난 친구들을 통해 빔 편집기와 유닉스
+시스템 설정 (일명 "라이싱")에 관심을 가지게 되었습니다. 그때부터 다양한
+설정 방식을 실험하면서 최적의 효율성과 디자인을 찾기 위해 노력하고 있었습니다.
+
+## 사용된 프로젝트/도구들
+
+- **Linux:** [Polybar](https://github.com/polybar/polybar)
+[Picom](https://github.com/yshui/picom)
+[EWW](https://github.com/elkowar/eww)
+[Conky](https://github.com/brndnmtthws/conky)
+[BSPWM](https://github.com/baskerville/bspwm)
+[SXHKD](https://github.com/baskerville/sxhkd)
+[Berry WM](https://berrywm.org/)
+[i3](https://i3wm.org/)
+[Hyprland](https://github.com/hyprwm/Hyprland)
+[Waybar](https://github.com/Alexays/Waybar)
+[Rofi](https://github.com/davatorium/rofi)
+- **MacOS:** [Yabai (윈도 관리 프로그램)](https://github.com/koekeishiya/yabai/)
+[Sketchybar (위젯)](https://github.com/FelixKratz/SketchyBar)
+[Borders (활성 창을 강조하기)](https://github.com/FelixKratz/JankyBorders)
+
+## Linux
+
+import Arch2024 from "../ricing/arch2024.png";
+import Arch2024_2 from "../ricing/arch2024_2.png";
+
+<Imagelist
+  images={[
+    [Arch2024, "Darp Arch rice"],
+    [Arch2024_2, "Darp Arch rice with rofi"],
+  ]}
+  size={600}
+  dim="width"
+>
+  아치 리눅스에 웨이렌드(Wayland) 환경에서 설정한 라이스입니다. 설정 파일은 제
+  [Git 서버에](https://git.junickim.me/junirices/arch2025) 공개되어있습니다.
+</Imagelist>
+
+import Nixos from "../ricing/lempnixos2.png";
+import Arch from "../ricing/lemparch.jpeg";
+
+<Imagelist
+  images={[
+    [Nixos, "Nixos rice"],
+    [Arch, "Arch rice"],
+  ]}
+  size={600}
+  dim="width"
+>
+  제 System76 Lemur Pro 노트북에서 사용하는 라이스들입니다 왼쪽은 NixOS이고,
+  오른쪽은 Arch Linux 입니다. 웬도 관리 프로그램은
+  BSPWM 이며, 위젯은 Polybar 과 EWW 로 설정했습니다.
+  NixOS 설정 파일들은 제 [GitHub](https://github.com/junikimm717/nixosdots) 에 공유되어있습니다.
+</Imagelist>
+
+import i32021 from "../ricing/2021_i3rice.png";
+
+<Imagelist images={[[i32021, "2021 i3 Rice"]]} size={600} dim="width">
+  2021때 제 Lemur Pro 노트북에 설정한 라이스였습니다. 설정 파일은 제 
+  [GitHub](https://github.com/junikimm717/Dotfiles-i3-rice) 에
+  공유되어있습니다.
+</Imagelist>
+
+import Popberry from "../ricing/popberry.png";
+
+<Imagelist images={[[Popberry, "Popberry"]]} size={600} dim="width">
+  Debian Rice on a VM with Polybar, Conky, and Berry WM. Dotfiles on [my git
+  server](https://git.junickim.me/junirices/popberry).
+</Imagelist>
+
+import Debiancwm from "../ricing/debiancwm.png";
+
+<Imagelist images={[[Debiancwm, "Debian CWM"]]} size={600} dim="width">
+  Debian Rice on a VM with Calm WM, Picom, and Polybar.
+</Imagelist>
+
+## MacOS
+
+아래 공유되어있는 라이스들의 설정 파일들은 이 [GitHub
+리포지토리에](https://github.com/junikimm717/imacdots) 찾을 수 있습니다.
+제 아이맥과 맥북을 위해 다른 브랜치들이 있습니다.
+
+제가 맥오에스에서 사용하는 윈도 관리 프로그램 (Yabai) 를 사용하시려면 SIP 를 리커버리
+모드에서 꺼셔야됩니다. 사실상 유닉스의 권한 제도로서 충분한데 SIP 의 의미를 잘
+모르겠습니다...
+
+import MBP from "../ricing/mbp_catppuccin.png";
+
+<Imagelist
+  images={[[MBP, "MBP Catppuccin Rice"]]}
+  size={600}
+  dim={"width"}
+  nonlazy
+>
+  Catppuccin 색상 테마로 설정한 현재 노트북 라이스입니다.
+</Imagelist>
+
+import IMAC from "../ricing/imac_gruvbox.png";
+
+<Imagelist images={[[IMAC, "iMac Gruvbox Rice"]]} size={600} dim={"width"}>
+  Gruvbox 색상 테마로 설정한 현재 아이맥 라이스입니다.
+</Imagelist>
+
+import IMACCat from "../ricing/imac_catppuccin.png";
+
+<Imagelist
+  images={[[IMACCat, "iMac Catppuccin Rice"]]}
+  size={600}
+  dim={"width"}
+>
+  Catppuccin 색상 테마로 설정한 옛날 아이맥 라이스입니다.
+</Imagelist>
