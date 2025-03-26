@@ -1,0 +1,16 @@
+ul {
+  @apply list-disc list-inside text-base;
+}
+li {
+  @apply text-black dark:text-white;
+}
+div.nav-item {
+  @apply text-lg dark:text-white text-black;
+}
+a {
+  @apply duration-200 underline text-black dark:text-white hover:font-bold
+    decoration-2 decoration-primary dark:decoration-primary-dark;
+}
+li a {
+  @apply inline-block;
+}

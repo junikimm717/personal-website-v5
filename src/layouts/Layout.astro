@@ -5,12 +5,14 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
   content: any;
+  lang: "en" | "ko" | undefined;
 }
 const { content } = Astro.props;
+const lang = Astro.props.lang ?? "en";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <script is:inline>
       function colorMode() {
@@ -24,7 +26,13 @@ const { content } = Astro.props;
       document.addEventListener("astro:after-swap", colorMode);
     </script>
     <meta charset="UTF-8" />
-    <meta name="description" content="Juni's Personal Website" />
+    {
+      lang === "en" ? (
+        <meta name="description" content="Juni's Personal Website" />
+      ) : (
+        <meta name="description" content="김준희의 개인 홈페이지" />
+      )
+    }
     <meta name="viewport" content="width=device-width" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,22 +43,28 @@ const { content } = Astro.props;
     <title>{content.title}</title>
     <ClientRouter />
   </head>
-  <body class="dark:bg-darkbg dark:text-white font-mono">
+  <body class="font-mono dark:text-white dark:bg-darkbg">
     <slot />
     <footer
-      class="text-gray-600 dark:text-gray-400 p-3 text-center twocol:text-base text-sm"
+      class="p-3 text-sm text-center text-gray-600 dark:text-gray-400 twocol:text-base"
     >
       <Contact />
-      Made with Astro, React, and TailwindCSS. See the source code on
-      <a
-        href="https://github.com/junikimm717/personal-website-v5"
-        class="underline decoration-primary dark:decoration-primary-dark
-        text-black hover:font-bold dark:text-white"
-      >
-        GitHub.
-      </a>
+      {
+        lang === "en" ? (
+          <>
+            Made with Astro, React, and TailwindCSS. See the source code on
+            <a
+              href="https://github.com/junikimm717/personal-website-v5"
+              class="text-black underline dark:text-white hover:font-bold decoration-primary dark:decoration-primary-dark"
+            >
+              GitHub.
+            </a>
+          </>
+        ) : null
+      }
       <br />
-      &copy; Juni Kim 2023-{new Date().getFullYear()}
+      &copy;
+      {lang === "en" ? "Juni Kim" : "김준희"} 2023-{new Date().getFullYear()}
     </footer>
   </body><script
     async

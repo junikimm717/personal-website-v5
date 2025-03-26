@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Body from "@components/Body.astro";
+import Rickroll from "@/components/Rickroll";
+import KoBody from "@/components/KoBody.astro";
+
+interface Props {
+  content: any;
+}
+
+const korean = Astro.url.pathname.startsWith("/ko");
+---
+
+<Layout content={{ title: "404" }} lang={korean ? "ko" : "en"}>
+  {
+    korean ? (
+      <KoBody>
+        <div class="p-0 m-0 duration-500 prose prose-h1:font-extrabold prose-h2:font-bold prose-h3:font-semibold prose-a:underline prose-a:decoration-primary prose-a:decoration-2 prose-figcaption:text-center prose-figcaption:leading-7 prose-p:leading-8 prose-a:transition-all prose-sm twocol:prose-base prose-headings:font-sans dark:prose-invert dark:prose-a:decoration-primary-dark hover:prose-a:font-bold">
+          <h1>요청하신 페이지가 없습니다!</h1>
+          <slot />
+        </div>
+      </KoBody>
+    ) : (
+      <Body>
+        <div class="p-0 m-0 duration-500 prose prose-h1:font-extrabold prose-h2:font-bold prose-h3:font-semibold prose-a:underline prose-a:decoration-primary prose-a:decoration-2 prose-figcaption:text-center prose-figcaption:leading-7 prose-p:leading-8 prose-a:transition-all prose-sm twocol:prose-base prose-headings:font-sans dark:prose-invert dark:prose-a:decoration-primary-dark hover:prose-a:font-bold">
+          <h1>You Lost The Game!</h1>
+          <p>
+            <strong>4</strong>04 4<strong>0</strong>4 40<strong>4</strong>
+          </p>
+          <p>Not nOt noT</p>
+          <p>Found fOund foUnd fouNd founD</p>
+          <Rickroll client:idle />
+          <slot />
+        </div>
+      </Body>
+    )
+  }
+</Layout>

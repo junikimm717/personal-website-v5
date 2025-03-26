@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-import useMediaQuery from "@/lib/mediaquery";
 import { AnimatePresence, motion } from "motion/react";
+import useMediaQuery from "@lib/mediaquery";
 
-export default function Navbar(props: { children: React.ReactNode }) {
+export interface NavbarProps {
+  children: React.ReactNode;
+  lang: "en" | "ko";
+}
+
+export default function Navbar(props: NavbarProps) {
   const small = useMediaQuery("(max-width: 700px)");
   const [open, setOpen] = useState<boolean>(false);
   return small ? (
@@ -51,7 +56,9 @@ export default function Navbar(props: { children: React.ReactNode }) {
     </nav>
   ) : (
     <nav id="navtwo" className="sticky top-6 p-3 mx-1 column">
-      <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
+      <h1 className="text-xl font-extrabold">
+        {props.lang === "ko" ? "김준희" : "Juni C. Kim"}
+      </h1>
       <div className="hidden font-mono twocol:block">{props.children}</div>
     </nav>
   );

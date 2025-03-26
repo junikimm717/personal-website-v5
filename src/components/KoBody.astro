@@ -1,0 +1,45 @@
+---
+import Navbar from "./Navbar";
+import Settings from "./Settings";
+
+import { FaBowlRice, FaBroom, FaCat } from "react-icons/fa6";
+import "@/navbar.css";
+---
+
+<div class="gap-3 p-3 mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12">
+  <div
+    class="sticky top-1 z-50 my-3 font-sans bg-white twocol:col-span-3 twocol:static dark:bg-darkbg"
+    transition:persist
+  >
+    <Navbar client:load lang="ko">
+      <div class="text-lg text-primary dark:text-primary-dark">
+        <div class="nav-item"><a href="/ko">소개</a></div>
+        <div class="nav-item"><a href="/ko/dev">포트폴리오</a></div>
+        <div class="nav-item"><a href="/ko/dev/setup">개발 환경</a></div>
+        <a href="/ko/ricing" class="nav-item">
+          라이싱
+          <FaBowlRice />
+        </a>
+        <div class="nav-item">
+          <a href="/ko/mop">
+            MOP
+            <FaBroom className="inline" />
+          </a>
+        </div>
+        <div class="nav-item"><a href="/resume.pdf">이력서</a></div>
+        <div class="nav-item">
+          <a href="/cats">
+            고양이
+            <FaCat className="inline" />
+          </a>
+        </div>
+      </div>
+      <Settings lang="ko" client:load />
+    </Navbar>
+  </div>
+  <div
+    class="overflow-x-scroll col-span-12 p-3 my-3 mx-1 column twocol:col-span-9"
+  >
+    <slot />
+  </div>
+</div>

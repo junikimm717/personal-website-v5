@@ -1,0 +1,116 @@
+---
+layout: "@layouts/KoMdxPage.astro"
+title: "김준희의 포트폴리오"
+---
+
+import Imagelist from "@components/Imagelist.astro";
+
+# 프로젝트
+
+5년이 넘은 제 개발 강력 동안 제게 가장 의미깊었던 프로젝트들을 공유합니다.
+제 다른 프로젝트들이 궁굼하시다면, 대부분 [제
+GitHub](https://github.com/junikimm717)나 [제 Git 서버](https://git.junickim.me)
+에 GNU GPL 라이선스로 공개되어 있습니다.
+
+경험상, 저나 주변 사람들에게 실질적인 도움이 되었던 프로젝트들이 가장 오래
+지속되었습니다.
+
+## Search.MAATester.com
+
+import Search from "../dev/search.png";
+
+<Imagelist
+  images={[[Search, "Search.MAATester.com"]]}
+  size={300}
+  dim="height"
+  nonlazy
+/>
+
+이 웹사이트는 올림피아드 문제 2만 개를 검색할수있는 검색 엔진입니다. 
+키워드를 입력하면 관련된
+문제들이 즉시 나타나며, 풀고 싶은 문제는 핸드아웃으로 만들어서 저장할수 있는
+기능이 있습니다.
+
+이 프로젝트 덕분에 제 첫 직장인 MathDash 회사에서 같이 일하게 될 기회를 얻을 수
+있었습니다.
+
+[웹사이트](https://search.maatester.com)
+[GitHub](https://github.com/MAA-Contest-Tester/search)
+
+## MAATester.com
+
+import Tester from "../dev/maatester.png";
+
+<Imagelist images={[[Tester, "MAATester.com"]]} size={600} dim="width" />
+
+미국 수학 경시대회 (AMC, AIME) 학습을 위해 개발한 웹사이트 입니다. 레벨과 자동
+체점 기능들이 있으며, 틀린 문제들은 LaTeX 형식으로 작성해서 나중에 검토할 수
+있습니다.
+
+React와 Firebase 를 사용하여 개발했습니다.
+
+[웹사이트](https://maatester.com)
+[GitHub](https://github.com/MAA-Contest-Tester/website)
+
+## PureMOOt
+
+[추가 정보](/mop/#puremoot)
+
+2023 미국 수학 올림피아드 프로그램 (MOP)의 디스코드 서버를 위해 구현한
+봇입니다. Redis 대이터배이스를 사용하고, Go와 Discordgo로 개발했습니다.
+
+## TeXbld
+
+간단한 설정 시스템으로 LaTeX 나 텍스트 파일을 컴파일 할 수 있는 도구를
+개발했습니다. 이 도구는 Docker를 사용하며, 어디든지 재현이 가능합니다.
+커스텀 버전 관리 시스템도 지원됩니다.
+
+[웹사이트](https://texbld.com) [GitHub](https://github.com/texbld)
+
+TeXbld를 개발하기 전에 [MkTeX](https://github.com/junikimm717/mktex) 이라는
+시스템도 구현해봤습니다.
+
+## MIT 4.602 중간고사 공부 웹사이트
+
+import Art1 from "../dev/4602_1.png";
+import Art2 from "../dev/4602_2.png";
+
+<Imagelist
+  images={[
+    [Art1, "홈페이지"],
+    [Art2, "게임 페이지"],
+  ]}
+  size={400}
+  dim="width"
+/>
+
+MIT *Modern Art and Mass Culture* (현대 미술과 대중 문화) 의 중간고사와
+기말고사를 위해 하루만에 개발한 웹사이트입니다. 사용자들은 작품 사진을 보고
+제목, 예술가, 그리고 제작 연도를 시간 내에 맞춰야하며, 게임을 마친후 작품마다
+정확도를 확인할수있습니다.
+
+React, TailwindCSS, 그리고 ShadCN UI로 개발했습니다.
+
+[웹사이트](https://4602.mit.junic.kim)
+[GitHub](https://github.com/junikimm717/4602-reviewer)
+
+## 고스톱 웹 도구
+
+import Hw1 from "../dev/hwatu_1.png";
+import Hw2 from "../dev/hwatu_2.png";
+
+<Imagelist
+  images={[
+    [Hw1, "고스톱 앱"],
+    [Hw2, "뻑 3개나 연속으로 발생한 사건"],
+  ]}
+  size={250}
+  dim="height"
+/>
+
+저희 가족끼리 진행했던 고스톱 게임들의 결과와 점수를 기록하기 위해 개발한
+웹사이트들입니다.
+
+[웹사이트](https://gostoptools.github.io)
+[GitHub](https://github.com/gostoptools)
+
