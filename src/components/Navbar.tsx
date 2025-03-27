@@ -13,7 +13,9 @@ export default function Navbar(props: NavbarProps) {
   return small ? (
     <nav id="navone" className="p-3 mx-1 column">
       <div className="flex flex-row justify-between">
-        <h1 className="text-xl font-extrabold">Juni C. Kim</h1>
+        <h1 className="text-xl font-extrabold">
+          {props.lang === "ko" ? "김준희" : "Juni C. Kim"}
+        </h1>
         <button
           className="flex justify-center items-center px-3 text-xl border border-gray-400 dark:border-gray-600 twocol:hidden"
           aria-label="Toggle Navbar Items"
