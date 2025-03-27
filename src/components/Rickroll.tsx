@@ -1,5 +1,5 @@
 import React from "react";
-import useMediaQuery from "@/lib/mediaquery";
+import useMediaQuery from "@lib/mediaquery";
 
 export default function Rickroll() {
   const small = useMediaQuery("(max-width: 400px)");

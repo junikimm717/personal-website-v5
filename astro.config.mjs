@@ -22,6 +22,10 @@ export default defineConfig({
       },
     }),
   ],
+  i18n: {
+    locales: ["en", "ko"],
+    defaultLocale: "en",
+  },
   server: { port: 1434, host: true },
   vite: {
     ssr: {
