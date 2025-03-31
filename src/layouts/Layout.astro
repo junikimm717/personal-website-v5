@@ -60,7 +60,19 @@ const lang = Astro.props.lang ?? "en";
               GitHub.
             </a>
           </>
-        ) : null
+        ) : (
+          <>
+            이 웹사이트는 React, Astro, 그리고 TailwindCSS로 개발했습니다.
+            소스코드는
+            <a
+              href="https://github.com/junikimm717/personal-website-v5"
+              class="text-black underline dark:text-white hover:font-bold decoration-primary dark:decoration-primary-dark"
+            >
+              GitHub
+            </a>
+            에 공개되어있습니다.
+          </>
+        )
       }
       <br />
       &copy;
@@ -77,6 +89,6 @@ const lang = Astro.props.lang ?? "en";
     }
     gtag("js", new Date());
 
-    gtag("config", "YOUR-ID-HERE");
+    gtag("config", "G-5CKPFSKGQ3");
   </script>
 </html>

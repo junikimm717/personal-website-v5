@@ -14,8 +14,8 @@ export default {
       },
     },
     fontFamily: {
-      'sans': 'IBM Plex Sans, sans-serif',
-      'mono': 'Roboto Mono, monospace',
+      'sans': 'IBM Plex Sans, IBM Plex Sans KR, sans-serif',
+      'mono': 'Roboto Mono, Noto Sans KR, monospace',
     },
   },
   plugins: [require("@tailwindcss/typography")],
