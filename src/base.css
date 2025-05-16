@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Roboto+Mono:ital,wght@0,400;0,600;0,700;1,400&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Noto+Sans+KR:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .column {
   @apply shadow-md
-  dark:hover:dark:shadow-gray-600 dark:shadow-gray-600 shadow-gray-400 hover:shadow-gray-400 border
   dark:border-gray-600 border-gray-400
+  dark:shadow-gray-600 shadow-gray-400 border
   duration-500;
 }
 /*
