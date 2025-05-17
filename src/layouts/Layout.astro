@@ -38,14 +38,13 @@ const lang = Astro.props.lang ?? "en";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="/triangle.jpeg" />
+    <meta name="naver-site-verification" content="7be7ef87aa379a5a567a271c0361c84ad2651554" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{content.title}</title>
   </head>
-  <body
-    class="font-mono dark:text-white dark:bg-darkbg"
-  >
+  <body class="font-mono dark:text-white dark:bg-darkbg">
     <slot />
     <footer
       class="p-3 text-sm text-center text-gray-600 dark:text-gray-400 twocol:text-base"
