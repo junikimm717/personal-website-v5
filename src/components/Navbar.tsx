@@ -10,11 +10,13 @@ export interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
   const small = useMediaQuery("(max-width: 700px)");
   const [open, setOpen] = useState<boolean>(false);
+
   return small ? (
-    <nav id="navone" className="p-3 mx-1 column">
+    <nav id="navone" className={`p-3 mx-1 column`}>
       <div className="flex flex-row justify-between">
         <h1 className="text-xl font-extrabold">
           {props.lang === "ko" ? "김준희" : "Juni C. Kim"}
+          {props.lang}
         </h1>
         <button
           className="flex justify-center items-center px-3 text-xl border border-gray-400 dark:border-gray-600 twocol:hidden"
@@ -27,7 +29,7 @@ export default function Navbar(props: NavbarProps) {
             width="14"
             viewBox="0 0 512 512"
             className={
-              "dark:fill-white fill-black transition-all duration-300" +
+              "dark:fill-white fill-black transition-all duration-500" +
               " " +
               (open ? "rotate-180" : "rotate-0")
             }
@@ -44,11 +46,11 @@ export default function Navbar(props: NavbarProps) {
             animate="visible"
             initial="hidden"
             variants={{
-              hidden: { height: 0, opacity: 0 }, // Initially collapsed and invisible
-              visible: { height: "auto", opacity: 1 }, // Fully expanded and visible
-              exit: { height: 0, opacity: 0 }, // Collapse back to 0 height and invisible
+              hidden: { height: 0, opacity: 0 },
+              visible: { height: "auto", opacity: 1 },
+              exit: { height: 0, opacity: 0 },
             }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="block overflow-y-hidden font-mono twocol:hidden"
           >
             {props.children}
@@ -57,7 +59,7 @@ export default function Navbar(props: NavbarProps) {
       </AnimatePresence>
     </nav>
   ) : (
-    <nav id="navtwo" className="sticky top-6 p-3 mx-1 column">
+    <nav id="navtwo" className={`sticky top-6 p-3 mx-1 column`}>
       <h1 className="text-xl font-extrabold">
         {props.lang === "ko" ? "김준희" : "Juni C. Kim"}
       </h1>
