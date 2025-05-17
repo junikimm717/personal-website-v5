@@ -14,7 +14,6 @@ const lang = Astro.props.lang ?? "en";
 <!doctype html>
 <html lang={lang}>
   <head>
-    <ClientRouter />
     <script is:inline>
       function colorMode() {
         if (localStorage.getItem("dark") === "true") {
@@ -26,6 +25,7 @@ const lang = Astro.props.lang ?? "en";
       colorMode();
       document.addEventListener("astro:after-swap", colorMode);
     </script>
+    <ClientRouter />
     <meta charset="UTF-8" />
     {
       lang === "en" ? (
@@ -43,7 +43,9 @@ const lang = Astro.props.lang ?? "en";
     <meta name="generator" content={Astro.generator} />
     <title>{content.title}</title>
   </head>
-  <body class="font-mono dark:text-white dark:bg-darkbg">
+  <body
+    class="font-mono dark:text-white dark:bg-darkbg"
+  >
     <slot />
     <footer
       class="p-3 text-sm text-center text-gray-600 dark:text-gray-400 twocol:text-base"
