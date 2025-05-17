@@ -13,3 +13,19 @@
   to = "https://junic.kim/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/"
+  to = "/ko/"
+  status = 302
+  conditions = { Language = ["ko"], }
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+
+[[redirects]]
+  from = "/:page"
+  to = "/en/:page"
+  status = 302
