@@ -15,17 +15,17 @@
   force = true
 
 [[redirects]]
-  from = "/"
-  to = "/ko/"
+  from = "https://junic.kim/"
+  to = "https://junic.kim/ko/"
   status = 302
-  conditions = { Language = ["ko"], }
+  conditions = { Language = ["ko"] }
 
 [[redirects]]
-  from = "/"
-  to = "/en/"
+  from = "https://junic.kim/"
+  to = "https://junic.kim/en/"
   status = 302
 
 [[redirects]]
-  from = "/:page"
-  to = "/en/:page"
+  from = "https://junic.kim/:page"
+  to = "https://junic.kim/en/:page"
   status = 302
