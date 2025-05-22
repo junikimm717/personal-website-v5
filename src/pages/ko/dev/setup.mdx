@@ -5,13 +5,28 @@ title: "김준희의 개발 환경"
 
 # 개발 환경
 
+## 컴퓨터
+
+현제 개발을 위해 사용하는 시스템들입니다:
+
+1. MacOS: M4 Pro Macbook Pro 와 M3 iMac
+2. Linux: System76 Darter 와 Lemur Pro
+3. 앱을 배표한 서버들: Raspberry Pi, [mit.junic.kim](https://mit.junic.kim),
+13년된 살린 컴퓨터,...
+
+어떤 환경을 사용하든 최대한 일관된 설정을 유지하려고 노력합니다.
+
 ## 터미널
 
-다수의 컴퓨터에서 유사한 환경을 유지하며, 터미널에서 위크플로우를 위해 주로
-tmux와 oh-my-zsh 를 사용합니다. 특히 tmux는 제가 개발한
+터미널 워크플로우의 효율성을 위해 주로 tmux와 zsh를 사용합니다.
+
+특히 tmux는 제가 개발한
 [프로그램과](https://github.com/junikimm717/tmuxs) 연동하여, 원하는 프로젝트를
 빠르게 이동할 수 있도록 구성했습니다. 또한, 키 한번만 눌러도 디렉토리를 검색할
 수 있도록 설정해두었습니다.
+
+최근에는 oh-my-zsh의 성능이 부족하여 플러그인들을 직접 설치하는 설정 시스템으로
+옮겨가는 중입니다.
 
 
 ```bash
@@ -42,8 +57,7 @@ curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/noplug.vi
 
 ## 창 관리자
 
-MacOS와 Linux 중 어느 환경을 사용하든 최대한 일관된 설정을 유지하려고 노력합니다.
-다만, Linux 에서 쓰이던 MOD 키는 MacOS 에서는 Alt 키로 대체했습니다.
+Linux 에서 쓰이던 MOD 키는 MacOS 에서는 Alt 키로 대체했습니다.
 
 - `mod-shift-a` 터미널을 열기
 - `mod-shift-return` Tmux가 실행하고있는 터미널을 열기
