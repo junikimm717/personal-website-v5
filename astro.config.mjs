@@ -33,8 +33,13 @@ export default defineConfig({
     },
   },
   markdown: {
+    // WHAT why is this not default??
+    syntaxHighlight: "shiki",
     shikiConfig: {
-      theme: "monokai",
+      themes: {
+        light: "light-plus",
+        dark: "monokai",
+      },
     },
   },
 });
