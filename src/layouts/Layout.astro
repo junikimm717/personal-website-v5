@@ -27,7 +27,10 @@ const lang = Astro.props.lang ?? "en";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="/triangle.jpeg" />
-    <meta name="naver-site-verification" content="7be7ef87aa379a5a567a271c0361c84ad2651554" />
+    <meta
+      name="naver-site-verification"
+      content="7be7ef87aa379a5a567a271c0361c84ad2651554"
+    />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
@@ -66,13 +69,16 @@ const lang = Astro.props.lang ?? "en";
       }
       <br />
       &copy;
-      {lang === "en" ? "Juni Kim" : "김준희 (金俊熹)"} 2023-{new Date().getFullYear()}
+      {lang === "en" ? "Juni Kim" : "김준희 (金俊熹)"} 2023-{
+        new Date().getFullYear()
+      }
     </footer>
   </body><script
+    is:inline
     async
     type="text/partytown"
     src="https://www.googletagmanager.com/gtag/js?id=G-5CKPFSKGQ3"></script>
-  <script type="text/partytown">
+  <script is:inline type="text/partytown">
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);

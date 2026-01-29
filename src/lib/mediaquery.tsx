@@ -5,10 +5,21 @@ export default function useMediaQuery(mediaQueryString: string) {
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia(mediaQueryString);
-    const listener = () => setMatches(!!mediaQueryList.matches);
-    listener();
-    mediaQueryList.addListener(listener);
-    return () => mediaQueryList.removeListener(listener);
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setMatches(!!event.matches);
+    };
+
+    // Use addEventListener with the "change" event
+    mediaQueryList.addEventListener("change", handleChange);
+
+    // Initial sync (in case the query changed)
+    setMatches(mediaQueryList.matches);
+
+    // Clean up using removeEventListener
+    return () => {
+      mediaQueryList.removeEventListener("change", handleChange);
+    };
   }, [mediaQueryString]);
 
   return matches;
