@@ -2,13 +2,27 @@
 import "@/base.css";
 import Contact from "@components/Contact.astro";
 import { ClientRouter } from "astro:transitions";
+import { buildSeoMetadata } from "@/lib/seo";
 
 interface Props {
-  content: any;
+  content: {
+    title?: string;
+    description?: string;
+    image?: string;
+    noindex?: boolean;
+  };
   lang: "en" | "ko" | undefined;
 }
 const { content } = Astro.props;
 const lang = Astro.props.lang ?? "en";
+const seo = buildSeoMetadata({
+  title: content.title,
+  description: content.description,
+  image: content.image,
+  noindex: content.noindex,
+  lang,
+  pathname: Astro.url.pathname,
+});
 ---
 
 <!doctype html>
@@ -16,14 +30,19 @@ const lang = Astro.props.lang ?? "en";
   <head>
     <ClientRouter />
     <meta charset="UTF-8" />
-    {
-      lang === "en" ? (
-        <meta name="description" content="Juni's Personal Website" />
-      ) : (
-        <meta name="description" content="김준희의 개인 홈페이지" />
-      )
-    }
+    {seo.description && <meta name="description" content={seo.description} />}
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content={seo.robots} />
+    <link rel="canonical" href={seo.canonicalUrl} />
+    {
+      seo.alternates.map((alternate) => (
+        <link
+          rel="alternate"
+          hreflang={alternate.hreflang}
+          href={alternate.href}
+        />
+      ))
+    }
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/png" href="/triangle.jpeg" />
@@ -32,9 +51,29 @@ const lang = Astro.props.lang ?? "en";
       content="7be7ef87aa379a5a567a271c0361c84ad2651554"
     />
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={seo.title} />
+    {
+      seo.description && (
+        <meta property="og:description" content={seo.description} />
+      )
+    }
+    <meta property="og:url" content={seo.canonicalUrl} />
+    <meta property="og:site_name" content={seo.siteName} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={seo.locale} />
+    {seo.imageUrl && <meta property="og:image" content={seo.imageUrl} />}
+    <meta name="twitter:card" content={seo.twitterCard} />
+    <meta name="twitter:title" content={seo.title} />
+    {
+      seo.description && (
+        <meta name="twitter:description" content={seo.description} />
+      )
+    }
+    {seo.imageUrl && <meta name="twitter:image" content={seo.imageUrl} />}
+
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
-    <title>{content.title}</title>
+    <title>{seo.title}</title>
   </head>
   <body class="font-mono dark:text-white dark:bg-darkbg">
     <slot />

@@ -11,7 +11,7 @@ interface Props {
 const korean = Astro.url.pathname.startsWith("/ko");
 ---
 
-<Layout content={{ title: "404" }} lang={korean ? "ko" : "en"}>
+<Layout content={{ title: "404", noindex: true }} lang={korean ? "ko" : "en"}>
   {
     korean ? (
       <KoBody>

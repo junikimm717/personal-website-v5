@@ -1,0 +1,31 @@
+# Juni Kim
+
+Canonical site: https://junic.kim
+Sitemap: https://junic.kim/sitemap-index.xml
+Source: https://github.com/junikimm717/personal-website-v5
+
+## Primary Routes
+
+- /en/
+- /ko/
+- /en/dev/
+- /ko/dev/
+- /en/6s913/
+- /en/dev/setup/
+- /ko/dev/setup/
+- /en/dev/school/
+- /en/mop/
+- /en/ricing/
+- /ko/ricing/
+- /en/ricing/linux/
+- /en/ricing/macos/
+- /en/research/exposome/
+- /en/research/faceanalysis/
+
+## Static Resources
+
+- /resume.pdf
+- /research/GC_HRMS_Poster.pdf
+- /research/medneurips_2023_poster.pdf
+- /code/juni.cls
+- /code/tmuxs.sh
