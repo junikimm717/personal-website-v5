@@ -1,17 +1,13 @@
 ---
 import Navbar from "./Navbar";
-import Settings from "./Settings";
+import Settings from "./Settings.astro";
+import SiteFrame from "./SiteFrame.astro";
 
 import { FaBowlRice } from "react-icons/fa6";
-import "@/navbar.css";
 ---
 
-<div class="gap-3 p-3 mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12">
-  <div
-    class="sticky top-1 z-50 my-3 font-sans bg-white twocol:col-span-3 twocol:static dark:bg-darkbg"
-    transition:name="navbar"
-    transition:animate="none"
-  >
+<SiteFrame>
+  <Fragment slot="nav">
     <Navbar client:load transition:persist lang="ko">
       <div class="text-lg text-primary dark:text-primary-dark">
         <div class="nav-item"><a href="/ko">소개</a></div>
@@ -23,12 +19,8 @@ import "@/navbar.css";
         </a>
         <div class="nav-item"><a href="/resume.pdf">이력서 (영어)</a></div>
       </div>
-      <Settings lang="ko" client:load />
+      <Settings lang="ko" />
     </Navbar>
-  </div>
-  <div
-    class="overflow-x-scroll col-span-12 p-3 my-3 mx-1 column twocol:col-span-9"
-  >
-    <slot />
-  </div>
-</div>
+  </Fragment>
+  <slot />
+</SiteFrame>

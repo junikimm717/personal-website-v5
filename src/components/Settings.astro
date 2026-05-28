@@ -1,0 +1,20 @@
+---
+interface Props {
+  lang: "en" | "ko";
+}
+
+const { lang } = Astro.props;
+const targetLang = lang === "ko" ? "en" : "ko";
+---
+
+<div class="flex justify-center w-full">
+  <span class="flex gap-2 justify-center">
+    <a
+      class="language-switcher flex justify-center items-center p-2 mx-auto mt-2 w-12 h-12 text-2xl no-underline border border-gray-400 duration-500 dark:border-gray-600 hover:text-white dark:hover:bg-white dark:hover:text-black hover:bg-darkbg"
+      href={`/${targetLang}`}
+      aria-label={lang === "ko" ? "Switch to English" : "한국어로 전환"}
+    >
+      {lang === "ko" ? "en" : "한"}
+    </a>
+  </span>
+</div>

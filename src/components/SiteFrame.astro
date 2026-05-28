@@ -1,0 +1,18 @@
+---
+import "@/navbar.css";
+---
+
+<div class="gap-3 p-3 mx-auto max-w-[900px] twocol:grid twocol:grid-cols-12">
+  <div
+    class="sticky top-1 z-50 my-3 font-sans bg-white twocol:col-span-3 twocol:static dark:bg-darkbg"
+    transition:name="navbar"
+    transition:animate="none"
+  >
+    <slot name="nav" />
+  </div>
+  <div
+    class="overflow-x-scroll col-span-12 p-3 my-3 mx-1 site-panel twocol:col-span-9"
+  >
+    <slot />
+  </div>
+</div>
