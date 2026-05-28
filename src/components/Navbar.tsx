@@ -10,10 +10,15 @@ export default function Navbar(props: NavbarProps) {
   const [open, setOpen] = useState<boolean>(false);
   const menuId = `site-nav-menu-${props.lang}`;
   const title = props.lang === "ko" ? "김준희" : "Juni C. Kim";
+  const menuLabel = props.lang === "ko" ? "메뉴" : "Menu";
   const toggleLabel =
     props.lang === "ko"
-      ? "내비게이션 메뉴 열기/닫기"
-      : "Toggle navigation menu";
+      ? open
+        ? "내비게이션 메뉴 닫기"
+        : "내비게이션 메뉴 열기"
+      : open
+        ? "Close navigation menu"
+        : "Open navigation menu";
 
   return (
     <>
@@ -22,12 +27,13 @@ export default function Navbar(props: NavbarProps) {
           <h1 className="text-xl font-extrabold leading-none">{title}</h1>
           <button
             type="button"
-            className="flex justify-center items-center px-3 py-1 min-w-10 min-h-9 text-xl border border-gray-400 dark:border-gray-600 twocol:hidden"
+            className="flex justify-center items-center gap-2 px-3 py-1 min-h-9 font-mono text-base border border-gray-400 dark:border-gray-600 twocol:hidden"
             aria-label={toggleLabel}
             aria-controls={menuId}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
           >
+            <span>{menuLabel}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="14"
