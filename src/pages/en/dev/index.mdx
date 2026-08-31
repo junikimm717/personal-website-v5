@@ -48,6 +48,28 @@ a VPS with Docker.
 [Website](https://search.maatester.com)
 [GitHub](https://github.com/MAA-Contest-Tester/search)
 
+## Statically Linked Python
+
+Making Python as fast as possible with compiler and build options. Static
+linking allows for the compiler to do whole program link-time optimization,
+which unlocks optimizations between python and its dependencies. Benchmarking
+indicates that it's on average around 19% faster than standard Python, but
+efforts are continuing to assess the impact of different optimizations.
+
+Static linking is absolutely **not** supported by upstream Python, so this
+required a bunch of monkey patching and bug fixes. For the love of the game, the
+build system was designed to support cross-compilation to over ten other
+architecture targets.
+
+[GitHub](https://github.com/junikimm717/static-python)
+
+In the midst of this madness, I also created
+[gccfactory](https://github.com/junikimm717/gccfactory), which allows for
+canadian cross compilation. From an x86 machine, I can create a cross compiler
+that only runs on an aarch64 machine but compiles C code to a binary which only
+runs on a riscv64 machine. Resulting toolchains also have the LTO plugin
+statically linked and include a copy of `make` for convenience.
+
 ## MAATester.com
 
 import Tester from "@assets/maatester.png";
@@ -76,17 +98,6 @@ configuration system. A convenient version manager is also provided.
 
 It's also worth noting that I had a less sophisticated predecessor to this project,
 [MkTeX](https://github.com/junikimm717/mktex).
-
-## Statically Linked Python
-
-A cursed attempt at creating a statically linked python interpreter. Since
-python actually depends a lot on dynamic linking, this required a good amount of
-source code monkey patching for it to work. Somewhere along the way, I decided
-to cross-compile to a bunch of other CPU architectures, leading me down the
-cross-compile toolchain rabbit hole :) All built interpreters are also fully
-link time optimized too.
-
-[GitHub](https://github.com/junikimm717/static-python)
 
 ## Ohsmathc.club
 

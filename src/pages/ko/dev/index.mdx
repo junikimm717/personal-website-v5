@@ -68,6 +68,26 @@ import Search from "@assets/search.png";
 [웹사이트](https://search.maatester.com)
 [GitHub](https://github.com/MAA-Contest-Tester/search)
 
+## 정적 링크된 파이톤
+
+파이톤을 최대한 빠르게 만들어보려고 계속 다듬고 있는 프로젝트입니다. 파이톤과
+의존하고 있는 요소들을 전부 하나로 정적 링크하면 컴파일러가 프로그램 전체를
+한꺼번에 최적화할 수 있게 되는데, 이렇게 빌드한 파이톤이 평균 19% 정도 더
+빨랐습니다. 어떤 최적화가 실제로 얼마나 도움이 되는지는 지금도 측정해보고 있는
+중입니다.
+
+원래 파이톤은 정적 링크를 전혀 지원하지 않기 때문에, 소스 코드를 직접 고쳐가며
+버그들을 하나씩 잡아야 했습니다. 이왕 하는 김에 다수의 컴퓨터 구조로도
+빌드할 수 있게끔 만들어보았습니다.
+
+[GitHub](https://github.com/junikimm717/static-python)
+
+그러다 보니 크로스 컴파일러를 대신 만들어주는
+[gccfactory](https://github.com/junikimm717/gccfactory)라는 도구까지 개발하게
+되었습니다. 예를 들어 x86 컴퓨터에서, aarch64 에서만 실행되면서 riscv64 용
+프로그램을 만들어내는 컴파일러도 빌드할 수 있습니다. 컴파일러 도구들과 기본적인
+운영체제 라이브러리에 대해 많이 배울 수 있었던 프로젝트입니다.
+
 ## MAATester.com
 
 import Tester from "@assets/maatester.png";
@@ -80,18 +100,6 @@ React와 Firebase 를 사용하여 개발했습니다.
 
 [웹사이트](https://maatester.com)
 [GitHub](https://github.com/MAA-Contest-Tester/website)
-
-## 정적 링크된 파이톤
-
-[GitHub](https://github.com/junikimm717/static-python)
-
-2025년도 봄학기 기말고사를 앞두고 재미로 만들어본 프로젝트입니다. 제공되어 있는
-매이크파일을 사용하시면 의존하고 있는 요소들이 다 들어가있는 파이톤 파일을
-생성할 수 있습니다. 원래 컨테이너 같은 환경에서 실행하려고 시작한
-프로젝트였는데, 다양한 컴퓨터 구조들을 (x86, aarch64, risc, mips64, …) 지원할 수
-있게끔 만들어보았습니다. 컴파일러 도구들과 기본적인 운영체제 라이브러리에 관련된
-지식을 많이 얻을 수 있었던 것 같습니다.
-
 
 ## PureMOOt
 
