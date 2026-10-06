@@ -7,11 +7,11 @@ title: "김준희의 개발 환경"
 
 ## 컴퓨터
 
-현제 개발을 위해 사용하는 시스템들입니다:
+현재 개발을 위해 사용하는 시스템들입니다:
 
-1. MacOS: M4 Pro Macbook Pro 와 M3 iMac
-2. Linux: System76 Darter 와 Lemur Pro
-3. 앱을 배포한 서버들: Raspberry Pi, [mit.junic.kim](https://mit.junic.kim), 재생시킨2012년형 DELL 데스크탑,…
+1. MacOS: M4 Pro Macbook Pro와 M3 iMac
+2. Linux: System76 Darter와 Lemur Pro
+3. 앱을 배포한 서버들: Raspberry Pi, [mit.junic.kim](https://mit.junic.kim), 재생시킨 2012년형 DELL 데스크톱,…
 
 어떤 환경을 사용하든 최대한 일관된 설정을 유지하려고 노력합니다.
 
@@ -21,7 +21,7 @@ title: "김준희의 개발 환경"
 
 특히 tmux는 제가 개발한
 [프로그램과](https://github.com/junikimm717/tmuxs) 연동하여, 원하는 프로젝트를
-빠르게 이동할 수 있도록 구성했습니다. 또한, 키 한번만 눌러도 디렉토리를 검색할
+빠르게 이동할 수 있도록 구성했습니다. 또한, 키 한 번만 눌러도 디렉토리를 검색할
 수 있도록 설정해두었습니다.
 
 최근에는 oh-my-zsh의 성능이 부족하여 플러그인들을 직접 설치하는 설정 시스템으로
@@ -35,20 +35,20 @@ bindkey -s "^f" "tmuxs -d 4\n"
 
 ## 편집기
 
-9학년때 빔 (Vim) 이라는 편집기를 접한 뒤 꾸준히 사용해 오면서, 최근에는 LSP
+9학년 때 빔 (Vim)이라는 편집기를 접한 뒤 꾸준히 사용해 오면서, 최근에는 LSP
 지원과 테마 변경 기능을 직접 추가해 [제게 꼭 맞는
-IDE](https://github.com/junikimm717/nvim2025) 로 발전시켰습니다. 또한, 커밋이
+IDE](https://github.com/junikimm717/nvim2025)로 발전시켰습니다. 또한, 커밋이
 발생할 때마다 Docker 이미지를 빌드가 되며, 누구든 즉시 사용할 수 있도록 환경을
 구성해 두었습니다.
 
-서버나 컨테이너 환경에서 급하게 편집기를 설정해야될 경우에는, [빔 설정
+서버나 컨테이너 환경에서 급하게 편집기를 설정해야 할 경우에는, [빔 설정
 파일을](https://git.junickim.me/junikimm717/vim2023) 저장하면 제가 가장 좋아하는 기능들을 즉시 사용할 수 있습니다. 아래 예시처럼 터미널에 복사해
 손쉽게 적용 가능합니다.
 
 ```bash
 # 모든 기능이 있는 설정 파일
 curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/lsp.vimrc -o $HOME/.vimrc
-# 플러그인을 최소한 포함되있는 설정 파일 (Git 는 요구합니다)
+# 플러그인을 최소한 포함되어 있는 설정 파일 (Git은 요구합니다)
 curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/minimal.vimrc -o $HOME/.vimrc
 # 플러그인이 안 포함된 설정 파일
 curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/noplug.vimrc -o $HOME/.vimrc
@@ -56,14 +56,14 @@ curl -LJ https://git.junickim.me/junikimm717/vim2023/raw/branch/master/noplug.vi
 
 ## 창 관리자
 
-Linux 에서 쓰이던 MOD 키는 MacOS 에서는 Alt 키로 대체했습니다.
+Linux에서 쓰이던 MOD 키는 MacOS에서는 Alt 키로 대체했습니다.
 
 - `mod-shift-a` 터미널을 열기
-- `mod-shift-return` Tmux가 실행하고있는 터미널을 열기
+- `mod-shift-return` Tmux가 실행하고 있는 터미널을 열기
 - `mod-shift-w` 웹 브라우저를 열기
-- `mod-space` 어플 선택 메뉴를 열기 (Raycast 아니면 Rofi)
+- `mod-space` 앱 선택 메뉴를 열기 (Raycast 아니면 Rofi)
 
-어플리케이션은 제가 직접 정의한 규칙에 따라 창으로 이동합니다.
+애플리케이션은 제가 직접 정의한 규칙에 따라 창으로 이동합니다.
 
 1. 터미널
 2. 웹 브라우저
