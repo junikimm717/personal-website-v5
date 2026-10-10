@@ -7,13 +7,12 @@ import Imagelist from "@components/Imagelist.astro";
 
 # 프로젝트
 
-제 개발 경력 중 최근 5년 동안에 제게 가장 의미 깊었던 프로젝트들을 공유합니다.
-저의 개인적인 다른 프로젝트들이 궁금하시다면, GNU GPL 라이선스로 공개되어 있는
+최근 5년 동안 제게 가장 의미 깊었던 프로젝트들입니다.
+다른 개인 프로젝트가 궁금하시다면, GNU GPL 라이선스로 공개된
 [GitHub](https://github.com/junikimm717)나 [Git 서버](https://git.junickim.me)
 에서 찾아보실 수 있습니다.
 
-경험상, 저 자신과 주변 사람들에게 실질적인 도움이 되었던 프로젝트들이 가장 오래
-지속되었던 것 같습니다.
+경험상, 저와 주변 사람에게 실제로 도움이 된 프로젝트가 가장 오래갔습니다.
 
 ## MIT 6.S913
 
@@ -21,10 +20,10 @@ import Imagelist from "@components/Imagelist.astro";
 학생들은 11일간 파일시스템, 커널, 사용자 서비스, 그리고 컴파일러 툴체인을
 배우면서 최소한으로 작동하는 리눅스 시스템을 직접 설계했습니다.
 
-전년도 여름에 구축했던 미먹스를 참고하면서 강의 내용을 구성했습니다.
+전해 여름에 만든 미먹스를 참고해 강의를 구성했습니다.
 
-또한 강의 노트와 과제를 제작하고, 학생들의 빌드 코드를 실제로 실행해 과제를
-안전하게 채점할 수 있는 인프라를 함께 구축했습니다.
+강의 노트와 과제도 만들었고, 학생들의 빌드 코드를 직접 실행해 과제를
+안전하게 채점할 수 있는 인프라도 같이 만들었습니다.
 
 [정보 사이트](/en/6s913)
 
@@ -38,34 +37,33 @@ import Mimux from "@assets/mimux.png"
 
 <Imagelist images={[[Mimux, "Mimux"]]} size={600} dim="width" />
 
-리눅스 커널을 이용하여 직접 개발 중인 운영체제입니다. 최근에 유명을 달리한 저희
-고양이 미미를 기념하기 위해 명명하였습니다. 용량 우선으로 최적화된 커널 및
-기본적인 개발 패키지들은 600MB 내에 포함되어 있습니다. 포함된 소프트웨어는 빌드
-스크립트를 직접 마련한 상태입니다. 가상 머신 이미지는 GitHub에 공유되어 있고,
-패키지 정보는 미먹스 웹사이트에서 확인하실 수 있습니다.
+리눅스 커널로 직접 만드는 운영체제입니다. 얼마 전 세상을 떠난
+고양이 미미를 기려 이름을 붙였습니다. 용량을 우선해 맞춘 커널과
+기본 개발 패키지를 600MB 안에 넣었습니다. 포함된 소프트웨어는 빌드
+스크립트를 직접 작성한 상태입니다. 가상 머신 이미지는 GitHub에 올려 두었고,
+패키지 정보는 미먹스 웹사이트에서 확인할 수 있습니다.
 
 [패키지 웹사이트](https://mxm.mit.junic.kim)
 [GitHub](https://github.com/junikimm717/lfs)
 
 ## 정적 링크된 파이썬
 
-파이썬을 최대한 빠르게 만들어보려고 계속 다듬고 있는 프로젝트입니다. 파이썬과
-의존하고 있는 요소들을 전부 하나로 정적 링크하면 컴파일러가 프로그램 전체를
-한꺼번에 최적화할 수 있게 되는데, 이렇게 빌드한 파이썬이 평균 13% 정도 더
-빨랐습니다. 어떤 최적화가 실제로 얼마나 도움이 되는지는 지금도 측정해보고 있는
-중입니다.
+파이썬을 최대한 빠르게 만들려고 계속 다듬는 프로젝트입니다. 파이썬과
+의존 요소를 모두 하나로 정적 링크하면 컴파일러가 프로그램 전체를
+한꺼번에 최적화할 수 있고, 이렇게 빌드한 파이썬이 평균 13% 정도 더
+빨랐습니다. 어떤 최적화가 실제로 얼마나 도움이 되는지는 지금도 재고 있습니다.
 
-원래 파이썬은 정적 링크를 전혀 지원하지 않기 때문에, 소스 코드를 직접 고쳐가며
-버그들을 하나씩 잡아야 했습니다. 이왕 하는 김에 다수의 컴퓨터 구조로도
-빌드할 수 있게끔 만들어보았습니다.
+원래 파이썬은 정적 링크를 전혀 지원하지 않아서, 소스 코드를 직접 고치며
+버그를 하나씩 잡아야 했습니다. 이왕 하는 김에 여러 컴퓨터 구조로도
+빌드할 수 있게 만들어 보았습니다.
 
 [GitHub](https://github.com/junikimm717/static-python)
 
-그러다 보니 크로스 컴파일러를 대신 만들어주는
-[gccfactory](https://github.com/junikimm717/gccfactory)라는 도구까지 개발하게
-되었습니다. 예를 들어 x86 컴퓨터에서, aarch64에서만 실행되면서 riscv64용
-프로그램을 만들어내는 컴파일러도 빌드할 수 있습니다. 컴파일러 도구들과 기본적인
-운영체제 라이브러리에 대해 많이 배울 수 있었던 프로젝트입니다.
+그러다 크로스 컴파일러를 대신 만들어 주는
+[gccfactory](https://github.com/junikimm717/gccfactory)까지 만들게
+되었습니다. 예를 들어 x86 컴퓨터에서 aarch64에서만 돌면서 riscv64용
+프로그램을 만드는 컴파일러도 빌드할 수 있습니다. 컴파일러 도구와 기본
+운영체제 라이브러리를 많이 배울 수 있었던 프로젝트입니다.
 
 ## Search.MAATester.com
 
@@ -79,11 +77,11 @@ import Search from "@assets/search.png";
 />
 
 수학 올림피아드 기출 문제 2만 개를 검색할 수 있는 웹사이트입니다. 키워드를
-입력하면 관련된 문제들이 즉시 나타나며, 풀고 싶은 문제는 핸드아웃으로 만들어서
-저장할 수 있는 기능도 제공하였습니다.
+넣으면 관련 문제가 바로 나오고, 풀고 싶은 문제는 핸드아웃으로 만들어
+저장할 수도 있습니다.
 
-이 프로젝트로 인해 제 커리어의 출발점이 된 MathDash 회사에서 같이 일하게 될
-기회를 얻을 수 있었습니다.
+이 프로젝트 덕분에 커리어의 출발점이 된 MathDash에서 함께 일할
+기회를 얻었습니다.
 
 [웹사이트](https://search.maatester.com)
 [GitHub](https://github.com/MAA-Contest-Tester/search)
@@ -94,9 +92,9 @@ import Tester from "@assets/maatester.png";
 
 <Imagelist images={[[Tester, "MAATester.com"]]} size={600} dim="width" />
 
-미국 수학 올림피아드 (AMC, AIME) 학습을 위해 개발한 웹사이트입니다. 레벨과 자동 채점 기능들이 있으며, 틀린 문제들을 모아 LaTeX 형식으로 작성해서 추후에 복습할 수도 있습니다.
+미국 수학 올림피아드(AMC, AIME) 준비를 위해 만든 웹사이트입니다. 레벨과 자동 채점이 있고, 틀린 문제를 모아 LaTeX로 적어 두고 나중에 복습할 수도 있습니다.
 
-React와 Firebase를 사용하여 개발했습니다.
+React와 Firebase로 만들었습니다.
 
 [웹사이트](https://maatester.com)
 [GitHub](https://github.com/MAA-Contest-Tester/website)
@@ -118,24 +116,24 @@ import Reaper from "@assets/reaper.png";
 />
 
 
-2023 미국 수학 올림피아드 프로그램 (MOP)의 디스코드 서버를 위해 구현한 봇입니다.
-매일 캠프 출신 학생들을 랜덤하게 맞춰주고 소개와 대화를 지원해주는 역할을 합니다.
-익명 메시지랑 [리퍼 게임](https://aops.com/reaper) 기능도
-포함되어 있습니다.
-Redis 데이터베이스를 사용하면서 Go와 Discordgo로 개발했습니다.
+2023 미국 수학 올림피아드 프로그램(MOP) 디스코드 서버를 위해 만든 봇입니다.
+매일 캠프 학생들을 무작위로 짝 지어 주고, 소개와 대화를 돕습니다.
+익명 메시지와 [리퍼 게임](https://aops.com/reaper) 기능도
+들어 있습니다.
+Redis를 쓰며 Go와 Discordgo로 만들었습니다.
 
 [설명 웹사이트](https://puremoot.junickim.me/docs)
 [GitHub](https://github.com/junikimm717/puremoot)
 
 ## TeXbld
 
-간단한 설정 시스템으로 LaTeX나 텍스트 파일을 컴파일할 수 있는 도구를
-개발했습니다. 이 도구는 Docker를 사용하며, 어디든지 재현이 가능합니다.
-커스텀 버전 관리 시스템도 지원됩니다.
+간단한 설정으로 LaTeX나 텍스트 파일을 컴파일하는 도구를
+만들었습니다. Docker를 쓰므로 어디서든 같은 결과를 낼 수 있고,
+별도의 버전 관리도 됩니다.
 
 [웹사이트](https://texbld.com) [GitHub](https://github.com/texbld)
 
-TeXbld를 개발하기 전에 [MkTeX](https://github.com/mktex/mktex)이라는 시스템도 구현해 보았습니다.
+TeXbld를 만들기 전에 [MkTeX](https://github.com/mktex/mktex)이라는 시스템도 만들어 보았습니다.
 
 ## MIT 4.602 시험 공부 웹사이트
 
@@ -151,12 +149,12 @@ import Art2 from "@assets/4602_2.png";
   dim="width"
 />
 
-MIT *Modern Art and Mass Culture* (현대 미술과 대중 문화)의 중간고사와
-기말고사를 위해 하루 만에 개발한 웹사이트입니다. 사용자들은 작품 사진을 보고
-제목, 예술가, 그리고 제작 연도를 시간 내에 맞춰야 하며, 게임을 마친 후 작품마다
-정확도를 확인할 수 있습니다.
+MIT *Modern Art and Mass Culture*(현대 미술과 대중 문화) 중간고사와
+기말고사를 위해 하루 만에 만든 웹사이트입니다. 작품 사진을 보고
+제목, 작가, 제작 연도를 시간 안에 맞추고, 게임이 끝나면 작품마다
+정확도를 볼 수 있습니다.
 
-React, TailwindCSS, 그리고 ShadCN UI로 개발했습니다.
+React, TailwindCSS, ShadCN UI로 만들었습니다.
 
 [웹사이트](https://4602.mit.junic.kim)
 [GitHub](https://github.com/junikimm717/4602-reviewer)
@@ -175,7 +173,7 @@ import Hw2 from "@assets/hwatu_2.png";
   dim="height"
 />
 
-가족 간의 고스톱 게임 결과와 점수를 기록하기 위해 개발한 웹사이트들입니다.
+가족 고스톱 결과와 점수를 기록하려고 만든 웹사이트들입니다.
 
 [웹사이트](https://gostoptools.github.io)
 [GitHub](https://github.com/gostoptools)
