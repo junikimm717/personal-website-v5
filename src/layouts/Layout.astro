@@ -23,6 +23,19 @@ const seo = buildSeoMetadata({
   lang,
   pathname: Astro.url.pathname,
 });
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: seo.canonicalUrl,
+  name: seo.title,
+  inLanguage: lang,
+  dateModified: seo.updatedAt,
+  isPartOf: {
+    "@type": "WebSite",
+    name: seo.siteName,
+    url: SITE_ORIGIN,
+  },
+});
 ---
 
 <!doctype html>
@@ -63,22 +76,7 @@ const seo = buildSeoMetadata({
     <meta property="og:locale" content={seo.locale} />
     <meta property="og:updated_time" content={seo.updatedAt} />
     {seo.imageUrl && <meta property="og:image" content={seo.imageUrl} />}
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        url: seo.canonicalUrl,
-        name: seo.title,
-        inLanguage: lang,
-        dateModified: seo.updatedAt,
-        isPartOf: {
-          "@type": "WebSite",
-          name: seo.siteName,
-          url: SITE_ORIGIN,
-        },
-      })}
-    />
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
     <meta name="twitter:card" content={seo.twitterCard} />
     <meta name="twitter:title" content={seo.title} />
     {
