@@ -25,7 +25,54 @@
   to = "https://junic.kim/en/"
   status = 302
 
+# Unprefixed English URLs from before /en and /ko. Nested paths currently 404,
+# so crawlers never learn the new location. 301 (not 302) lets indexes update.
+[[redirects]]
+  from = "/dev/*"
+  to = "/en/dev/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/dev"
+  to = "/en/dev/"
+  status = 301
+
+[[redirects]]
+  from = "/ricing/*"
+  to = "/en/ricing/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/ricing"
+  to = "/en/ricing/"
+  status = 301
+
+[[redirects]]
+  from = "/research/*"
+  to = "/en/research/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/mop"
+  to = "/en/mop/"
+  status = 301
+
+[[redirects]]
+  from = "/mop/*"
+  to = "/en/mop/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/6s913"
+  to = "/en/6s913/"
+  status = 301
+
+[[redirects]]
+  from = "/6s913/*"
+  to = "/en/6s913/:splat"
+  status = 301
+
 [[redirects]]
   from = "https://junic.kim/:page"
   to = "https://junic.kim/en/:page"
-  status = 302
+  status = 301

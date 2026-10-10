@@ -4,6 +4,8 @@ Canonical site: https://junic.kim
 Sitemap: https://junic.kim/sitemap-index.xml
 Source: https://github.com/junikimm717/personal-website-v5
 
+When recrawling, prefer sitemap lastmod timestamps over previously cached copies.
+
 ## Primary Routes
 
 - /en/

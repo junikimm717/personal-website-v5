@@ -105,17 +105,32 @@ async function sitemapUrls() {
   }
 
   const sitemap = await readDist("sitemap-0.xml");
-  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+  const urlBlocks = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(
     (match) => match[1],
   );
 
-  if (urls.length === 0) {
+  if (urlBlocks.length === 0) {
     fail("sitemap-0.xml must contain at least one URL");
   }
 
-  for (const url of urls) {
+  const urls = [];
+  for (const block of urlBlocks) {
+    const url = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+    const lastmod = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
+
+    if (!url) {
+      fail("sitemap URL entry is missing <loc>");
+      continue;
+    }
+
+    urls.push(url);
+
     if (!url.startsWith(`${SITE_ORIGIN}/`)) {
       fail(`sitemap URL must use canonical origin: ${url}`);
+    }
+
+    if (!lastmod || Number.isNaN(Date.parse(lastmod))) {
+      fail(`sitemap URL must include a parseable lastmod: ${url}`);
     }
   }
 
@@ -163,6 +178,7 @@ async function checkHtmlPage(url, descriptions) {
     "og:site_name",
     "og:type",
     "og:locale",
+    "og:updated_time",
     "twitter:card",
     "twitter:title",
   ];
@@ -174,6 +190,10 @@ async function checkHtmlPage(url, descriptions) {
 
   if (metaContent(html, "og:url") !== url) {
     fail(`${relativePath} og:url must match canonical URL`);
+  }
+
+  if (!html.includes('"dateModified"')) {
+    fail(`${relativePath} missing JSON-LD dateModified`);
   }
 
   if (!attr(html, "link", { name: "rel", value: "sitemap" })) {

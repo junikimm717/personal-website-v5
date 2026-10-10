@@ -17,6 +17,9 @@ export interface AlternateLink {
 export const SITE_ORIGIN = "https://junic.kim";
 export const SITE_NAME = "Juni Kim";
 
+/** Deploy timestamp used as lastmod / dateModified / og:updated_time. */
+export const SITE_UPDATED_AT = new Date().toISOString();
+
 const LOCALES: Record<SiteLanguage, string> = {
   en: "en_US",
   ko: "ko_KR",
@@ -51,6 +54,7 @@ export function buildSeoMetadata(input: SeoInput) {
     robots: input.noindex ? "noindex, nofollow" : "index, follow",
     twitterCard: imageUrl ? "summary_large_image" : "summary",
     alternates: alternateLinks(pathname),
+    updatedAt: SITE_UPDATED_AT,
   };
 }
 
