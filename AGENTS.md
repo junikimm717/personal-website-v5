@@ -57,10 +57,21 @@ design and prose-first editing flow over adding new abstractions.
 - MDX frontmatter generally includes `layout` and `title`.
 - `Layout.astro` also supports `description`, `image`, and `noindex` through
   `buildSeoMetadata`.
+- Freshness for crawlers, previewers, and AI is `SITE_UPDATED_AT` in
+  `src/lib/seo.ts`. `Layout.astro` emits `og:updated_time` and JSON-LD
+  `dateModified`; the sitemap writes the same value as `<lastmod>`. Do not
+  drop these signals. Netlify already sends `Cache-Control:
+  public, max-age=0, must-revalidate` for HTML.
 - `scripts/check-seo.mjs` validates generated `dist/` output, canonical URLs,
-  sitemap links, alternates, robots, and internal links.
-- Route alternates are explicitly listed in `src/lib/seo.ts`. Be careful when
-  adding or renaming localized routes.
+  sitemap lastmod, `og:updated_time`, JSON-LD `dateModified`, alternates,
+  robots, `llms.txt`, and internal links.
+- Route alternates are explicitly listed in `src/lib/seo.ts`. When adding or
+  renaming a localized route, update that map and `public/llms.txt`.
+- Unprefixed English URLs (`/dev`, `/ricing`, `/research/*`, `/mop`, `/6s913`)
+  301 to `/en/...` in `netlify.toml`. Add the same 301 for new public English
+  routes that might be requested without `/en`. Nested paths 404 unless a
+  splat rule exists. Keep `/` language negotiation as 302, not 301.
+- Follow `.cursor/skills/seo/SKILL.md` for the route and freshness checklist.
 
 ## Verification
 
