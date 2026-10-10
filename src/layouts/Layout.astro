@@ -2,7 +2,7 @@
 import "@/base.css";
 import Contact from "@components/Contact.astro";
 import { ClientRouter } from "astro:transitions";
-import { buildSeoMetadata } from "@/lib/seo";
+import { SITE_ORIGIN, buildSeoMetadata } from "@/lib/seo";
 
 interface Props {
   content: {
@@ -22,6 +22,19 @@ const seo = buildSeoMetadata({
   noindex: content.noindex,
   lang,
   pathname: Astro.url.pathname,
+});
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: seo.canonicalUrl,
+  name: seo.title,
+  inLanguage: lang,
+  dateModified: seo.updatedAt,
+  isPartOf: {
+    "@type": "WebSite",
+    name: seo.siteName,
+    url: SITE_ORIGIN,
+  },
 });
 ---
 
@@ -61,7 +74,9 @@ const seo = buildSeoMetadata({
     <meta property="og:site_name" content={seo.siteName} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={seo.locale} />
+    <meta property="og:updated_time" content={seo.updatedAt} />
     {seo.imageUrl && <meta property="og:image" content={seo.imageUrl} />}
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
     <meta name="twitter:card" content={seo.twitterCard} />
     <meta name="twitter:title" content={seo.title} />
     {

@@ -4,6 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import partytown from "@astrojs/partytown";
+import { SITE_UPDATED_AT } from "./src/lib/seo.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,14 @@ export default defineConfig({
   integrations: [
     react(),
     mdx(),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        return {
+          ...item,
+          lastmod: SITE_UPDATED_AT,
+        };
+      },
+    }),
     partytown({
       config: {
         forward: ["dataLayer.push"],
