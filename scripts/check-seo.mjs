@@ -137,7 +137,8 @@ async function sitemapUrls() {
   const lastmods = [
     ...sitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g),
   ].map((match) => match[1]);
-  if (new Set(lastmods).size > 1) {
+  const uniqueLastmods = [...new Set(lastmods)];
+  if (uniqueLastmods.length !== 1) {
     fail("sitemap lastmod values must share one forced deploy timestamp");
   }
 
@@ -147,10 +148,10 @@ async function sitemapUrls() {
     }
   }
 
-  return urls;
+  return { urls, lastmod: uniqueLastmods[0] };
 }
 
-async function checkHtmlPage(url, descriptions) {
+async function checkHtmlPage(url, descriptions, forcedLastmod) {
   const relativePath = pathForUrl(url);
   const html = await readDist(relativePath);
   const pathname = new URL(url).pathname;
@@ -210,8 +211,14 @@ async function checkHtmlPage(url, descriptions) {
     fail(`${relativePath} missing JSON-LD dateModified`);
   }
 
-  if (metaContent(html, "og:updated_time") !== metaContent(html, "article:modified_time")) {
+  const updatedAt = metaContent(html, "og:updated_time");
+  if (updatedAt !== metaContent(html, "article:modified_time")) {
     fail(`${relativePath} update stamps must match`);
+  }
+  if (forcedLastmod && updatedAt !== forcedLastmod) {
+    fail(
+      `${relativePath} og:updated_time must match sitemap lastmod ${forcedLastmod}`,
+    );
   }
 
   if (
@@ -316,13 +323,13 @@ const descriptions = new Map();
 const htmlByPath = new Map();
 
 await checkRobots();
-const urls = await sitemapUrls();
+const { urls, lastmod } = await sitemapUrls();
 
 for (const url of urls) {
   if (new URL(url).pathname.endsWith(".pdf")) continue;
 
   const relativePath = pathForUrl(url);
-  htmlByPath.set(relativePath, await checkHtmlPage(url, descriptions));
+  htmlByPath.set(relativePath, await checkHtmlPage(url, descriptions, lastmod));
 }
 
 await checkInternalLinks(htmlByPath);

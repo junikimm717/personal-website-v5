@@ -17,8 +17,14 @@ export interface AlternateLink {
 export const SITE_ORIGIN = "https://junic.kim";
 export const SITE_NAME = "Juni Kim";
 
-/** Deploy timestamp forced onto lastmod / dateModified / og:updated_time. */
-export const SITE_UPDATED_AT = new Date().toISOString();
+/**
+ * One deploy timestamp, injected from astro.config.mjs so sitemap lastmod and
+ * HTML update tags cannot drift.
+ */
+export const SITE_UPDATED_AT: string =
+  typeof __SITE_UPDATED_AT__ === "string"
+    ? __SITE_UPDATED_AT__
+    : new Date().toISOString();
 
 export const RESUME_PATHS: Record<SiteLanguage, string> = {
   en: "/resume.pdf",
