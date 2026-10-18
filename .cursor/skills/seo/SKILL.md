@@ -9,10 +9,13 @@ HTML on Netlify already revalidates (`Cache-Control: public, max-age=0, must-rev
 
 ## Always Keep
 
-- `SITE_UPDATED_AT` in `src/lib/seo.ts` feeds:
-  - sitemap `<lastmod>` via `astro.config.mjs`
-  - `og:updated_time` in `src/layouts/Layout.astro`
+- `SITE_UPDATED_AT` in `src/lib/seo.ts` is the only freshness stamp. Force it onto:
+  - sitemap `<lastmod>` via `astro.config.mjs` `serialize` (overwrite any file mtime)
+  - `og:updated_time` and `article:modified_time` in `src/layouts/Layout.astro`
   - JSON-LD `WebPage.dateModified` in the same layout
+- `/resume.pdf` and `/resume_ko.pdf` must stay in parity: both in
+  `RESUME_URLS`, sitemap `customPages`, `public/llms.txt`, and every page
+  head as `rel="alternate"` PDF links.
 - `public/llms.txt` tells AI crawlers to prefer sitemap lastmod over cached copies.
 - Do not remove those fields to "clean up" head markup.
 - Do not invent a second lastmod source unless asked. Deploy time is enough for this site.
@@ -37,7 +40,7 @@ npm run build
 npm run check:seo
 ```
 
-`scripts/check-seo.mjs` requires sitemap lastmod, `og:updated_time`, JSON-LD `dateModified`, canonicals, alternates, robots, and internal links.
+`scripts/check-seo.mjs` requires a single forced sitemap lastmod, both resume PDFs, `og:updated_time`, `article:modified_time`, JSON-LD `dateModified`, canonicals, alternates, robots, and internal links.
 
 ## What Not To Do
 

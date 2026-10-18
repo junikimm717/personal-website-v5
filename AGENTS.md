@@ -58,10 +58,13 @@ design and prose-first editing flow over adding new abstractions.
 - `Layout.astro` also supports `description`, `image`, and `noindex` through
   `buildSeoMetadata`.
 - Freshness for crawlers, previewers, and AI is `SITE_UPDATED_AT` in
-  `src/lib/seo.ts`. `Layout.astro` emits `og:updated_time` and JSON-LD
-  `dateModified`; the sitemap writes the same value as `<lastmod>`. Do not
-  drop these signals. Netlify already sends `Cache-Control:
-  public, max-age=0, must-revalidate` for HTML.
+  `src/lib/seo.ts`. Force that same timestamp onto sitemap `<lastmod>`,
+  `og:updated_time`, `article:modified_time`, and JSON-LD `dateModified`.
+  Do not drop these signals or let file mtimes replace them. Netlify already
+  sends `Cache-Control: public, max-age=0, must-revalidate` for HTML.
+- English and Korean resumes are `/resume.pdf` and `/resume_ko.pdf`. Keep
+  both in `public/llms.txt`, the sitemap `customPages` list, and every page
+  `<head>` as `rel="alternate"` PDF links.
 - `scripts/check-seo.mjs` validates generated `dist/` output, canonical URLs,
   sitemap lastmod, `og:updated_time`, JSON-LD `dateModified`, alternates,
   robots, `llms.txt`, and internal links.

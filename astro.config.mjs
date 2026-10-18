@@ -4,7 +4,9 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import partytown from "@astrojs/partytown";
-import { SITE_UPDATED_AT } from "./src/lib/seo.ts";
+import { RESUME_URLS } from "./src/lib/seo.ts";
+
+const SITE_UPDATED_AT = new Date().toISOString();
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +15,7 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
+      customPages: [RESUME_URLS.en, RESUME_URLS.ko],
       serialize(item) {
         return {
           ...item,
@@ -32,6 +35,9 @@ export default defineConfig({
   },
   server: { port: 1434, host: true },
   vite: {
+    define: {
+      __SITE_UPDATED_AT__: JSON.stringify(SITE_UPDATED_AT),
+    },
     resolve: {
       noExternal: ["react-icons"],
     },
