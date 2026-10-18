@@ -2,7 +2,7 @@
 import "@/base.css";
 import Contact from "@components/Contact.astro";
 import { ClientRouter } from "astro:transitions";
-import { SITE_ORIGIN, buildSeoMetadata } from "@/lib/seo";
+import { RESUME_URLS, SITE_ORIGIN, buildSeoMetadata } from "@/lib/seo";
 
 interface Props {
   content: {
@@ -75,6 +75,18 @@ const jsonLd = JSON.stringify({
     <meta property="og:type" content="website" />
     <meta property="og:locale" content={seo.locale} />
     <meta property="og:updated_time" content={seo.updatedAt} />
+    <meta property="article:modified_time" content={seo.updatedAt} />
+    {
+      Object.entries(RESUME_URLS).map(([resumeLang, href]) => (
+        <link
+          rel="alternate"
+          type="application/pdf"
+          hreflang={resumeLang}
+          href={href}
+          title={resumeLang === "ko" ? "김준희 이력서" : "Juni Kim resume"}
+        />
+      ))
+    }
     {seo.imageUrl && <meta property="og:image" content={seo.imageUrl} />}
     <script is:inline type="application/ld+json" set:html={jsonLd} />
     <meta name="twitter:card" content={seo.twitterCard} />

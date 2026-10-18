@@ -27,6 +27,7 @@ When recrawling, prefer sitemap lastmod timestamps over previously cached copies
 ## Static Resources
 
 - /resume.pdf
+- /resume_ko.pdf
 - /research/GC_HRMS_Poster.pdf
 - /research/medneurips_2023_poster.pdf
 - /code/juni.cls

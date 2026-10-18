@@ -4,7 +4,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 import partytown from "@astrojs/partytown";
-import { SITE_UPDATED_AT } from "./src/lib/seo.ts";
+import { RESUME_URLS, SITE_UPDATED_AT } from "./src/lib/seo.ts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +13,7 @@ export default defineConfig({
     react(),
     mdx(),
     sitemap({
+      customPages: [RESUME_URLS.en, RESUME_URLS.ko],
       serialize(item) {
         return {
           ...item,

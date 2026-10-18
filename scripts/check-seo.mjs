@@ -134,6 +134,19 @@ async function sitemapUrls() {
     }
   }
 
+  const lastmods = [
+    ...sitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g),
+  ].map((match) => match[1]);
+  if (new Set(lastmods).size > 1) {
+    fail("sitemap lastmod values must share one forced deploy timestamp");
+  }
+
+  for (const resume of [`${SITE_ORIGIN}/resume.pdf`, `${SITE_ORIGIN}/resume_ko.pdf`]) {
+    if (!urls.includes(resume)) {
+      fail(`sitemap must include ${resume}`);
+    }
+  }
+
   return urls;
 }
 
@@ -179,6 +192,7 @@ async function checkHtmlPage(url, descriptions) {
     "og:type",
     "og:locale",
     "og:updated_time",
+    "article:modified_time",
     "twitter:card",
     "twitter:title",
   ];
@@ -194,6 +208,17 @@ async function checkHtmlPage(url, descriptions) {
 
   if (!html.includes('"dateModified"')) {
     fail(`${relativePath} missing JSON-LD dateModified`);
+  }
+
+  if (metaContent(html, "og:updated_time") !== metaContent(html, "article:modified_time")) {
+    fail(`${relativePath} update stamps must match`);
+  }
+
+  if (
+    !html.includes('href="https://junic.kim/resume.pdf"') ||
+    !html.includes('href="https://junic.kim/resume_ko.pdf"')
+  ) {
+    fail(`${relativePath} must advertise both resume PDFs`);
   }
 
   if (!attr(html, "link", { name: "rel", value: "sitemap" })) {
@@ -264,6 +289,8 @@ async function checkLlmsTxt() {
     "/ko/",
     "/en/dev/",
     "/en/research/exposome/",
+    "/resume.pdf",
+    "/resume_ko.pdf",
   ]) {
     if (!llms.includes(required)) {
       fail(`llms.txt must mention ${required}`);
@@ -292,6 +319,8 @@ await checkRobots();
 const urls = await sitemapUrls();
 
 for (const url of urls) {
+  if (new URL(url).pathname.endsWith(".pdf")) continue;
+
   const relativePath = pathForUrl(url);
   htmlByPath.set(relativePath, await checkHtmlPage(url, descriptions));
 }
