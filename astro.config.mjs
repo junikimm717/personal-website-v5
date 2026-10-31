@@ -16,6 +16,7 @@ export default defineConfig({
     mdx(),
     sitemap({
       customPages: [RESUME_URLS.en, RESUME_URLS.ko],
+      filter: (page) => !/\/404\/$/.test(page),
       serialize(item) {
         return {
           ...item,

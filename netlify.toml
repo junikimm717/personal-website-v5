@@ -76,3 +76,15 @@
   from = "https://junic.kim/:page"
   to = "https://junic.kim/en/:page"
   status = 301
+
+# Localized 404s. Non-forced, so they only apply when no file exists. Unknown
+# top-level paths are already 301'd under /en/ by the rule above.
+[[redirects]]
+  from = "/ko/*"
+  to = "/ko/404/index.html"
+  status = 404
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/404/index.html"
+  status = 404

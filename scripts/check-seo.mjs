@@ -306,16 +306,27 @@ async function checkLlmsTxt() {
 }
 
 async function checkStandalonePages() {
-  const html = await readDist("404.html");
-  const canonical = linkHref(html, "canonical");
-  const robots = metaContent(html, "robots");
+  for (const [page, url] of [
+    ["404.html", "/404.html"],
+    ["en/404/index.html", "/en/404/"],
+    ["ko/404/index.html", "/ko/404/"],
+  ]) {
+    const html = await readDist(page);
+    const canonical = linkHref(html, "canonical");
+    const robots = metaContent(html, "robots");
 
-  if (canonical !== `${SITE_ORIGIN}/404.html`) {
-    fail("404.html canonical must point to https://junic.kim/404.html");
+    if (canonical !== `${SITE_ORIGIN}${url}`) {
+      fail(`${page} canonical must point to ${SITE_ORIGIN}${url}`);
+    }
+
+    if (robots !== "noindex, nofollow") {
+      fail(`${page} must be marked noindex, nofollow`);
+    }
   }
 
-  if (robots !== "noindex, nofollow") {
-    fail("404.html must be marked noindex, nofollow");
+  const ko = await readDist("ko/404/index.html");
+  if (!/<html\b[^>]*\blang=["']ko["']/i.test(ko)) {
+    fail("ko/404/index.html must be rendered in Korean");
   }
 }
 
